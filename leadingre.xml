@@ -1,11 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Data>
   <Offices>
+    <Office>
+      <OfficeKey>ANGELL-HASMAN-WV</OfficeKey>
+      <OfficeStatus>Active</OfficeStatus>
+      <OfficeName>Angell, Hasman &amp; Associates (Malcolm Hasman) Realty Ltd.</OfficeName>
+      <OfficeAddress1>1544 Marine Drive</OfficeAddress1>
+      <OfficeAddress2>Suite 203</OfficeAddress2>
+      <OfficeCity>West Vancouver</OfficeCity>
+      <OfficeStateOrProvince>BC</OfficeStateOrProvince>
+      <OfficePostalCode>V7V 1H8</OfficePostalCode>
+      <OfficeCountry>CAN</OfficeCountry>
+      <OfficePhone>604-921-1188</OfficePhone>
+      <OfficeEmail/>
+      <OfficeMlsId>ANGELL-HASMAN-WV</OfficeMlsId>
+    </Office>
   </Offices>
   <Members>
+    <Member>
+      <MemberKey>MALCOLM-HASMAN</MemberKey>
+      <OfficeKey>ANGELL-HASMAN-WV</OfficeKey>
+      <MemberMlsId>MALCOLM-HASMAN</MemberMlsId>
+      <MemberLastName>Hasman</MemberLastName>
+      <MemberFirstName>Malcolm</MemberFirstName>
+      <MemberStatus>Active</MemberStatus>
+      <MemberMobilePhone>604-290-1679</MemberMobilePhone>
+      <MemberEmail/>
+    </Member>
   </Members>
   <Properties>
+    <Property>
+      <ListingKey>R3154478</ListingKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
+      <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
+      <ListingId>R3154478</ListingId>
+      <PropertyType>Residential</PropertyType>
+      <PropertySubType>Single Family Residence</PropertySubType>
+      <StreetNumber>3820</StreetNumber>
+      <StreetName>Sunridge</StreetName>
+      <StreetSuffix>Drive</StreetSuffix>
+      <UnitNumber/>
+      <City>Whistler</City>
+      <StateOrProvince>BC</StateOrProvince>
+      <PostalCode>V8E 0W1</PostalCode>
+      <Country>CAN</Country>
+      <ListPrice>15800000</ListPrice>
+      <PublicRemarks><![CDATA[Architecturally significant ski-in mountain estate on Whistler's Sunridge Plateau, offering six bedrooms, seven bathrooms, expansive alpine views, a dramatic cedar-centered staircase, media room, wine cellar, indoor lap pool, steam room and outdoor hot tub.]]></PublicRemarks>
+      <BedroomsTotal>6</BedroomsTotal>
+      <BathroomsFull>5</BathroomsFull>
+      <BathroomsHalf>2</BathroomsHalf>
+      <StandardStatus>Active</StandardStatus>
+      <LivingArea>6345</LivingArea>
+      <LivingAreaUnits>Square Feet</LivingAreaUnits>
+      <InternetAddressDisplayYN>1</InternetAddressDisplayYN>
+      <InternetPriceDisplayYN>1</InternetPriceDisplayYN>
+      <Currency>CAD</Currency>
+    </Property>
+    <Property>
+      <ListingKey>R3136700</ListingKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
+      <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
+      <ListingId>R3136700</ListingId>
+      <PropertyType>Residential</PropertyType>
+      <PropertySubType>Single Family Residence</PropertySubType>
+      <StreetNumber>2408</StreetNumber>
+      <StreetName>Halston</StreetName>
+      <StreetSuffix>Court</StreetSuffix>
+      <UnitNumber/>
+      <City>West Vancouver</City>
+      <StateOrProvince>BC</StateOrProvince>
+      <PostalCode>V7S 3K3</PostalCode>
+      <Country>CAN</Country>
+      <ListPrice>23750000</ListPrice>
+      <PublicRemarks><![CDATA[Luxury Whitby Estates residence with sweeping ocean and city views, five bedroom suites, eight bathrooms, expansive entertaining spaces, two chef's kitchens, wine display, home theatre, fitness studio, private office and smart-home automation.]]></PublicRemarks>
+      <BedroomsTotal>5</BedroomsTotal>
+      <BathroomsFull>5</BathroomsFull>
+      <BathroomsHalf>3</BathroomsHalf>
+      <StandardStatus>Active</StandardStatus>
+      <LivingArea>9549</LivingArea>
+      <LivingAreaUnits>Square Feet</LivingAreaUnits>
+      <InternetAddressDisplayYN>1</InternetAddressDisplayYN>
+      <InternetPriceDisplayYN>1</InternetPriceDisplayYN>
+      <Currency>CAD</Currency>
+    </Property>
   </Properties>
-  <Medias>
-  </Medias>
+  <Medias></Medias>
 </Data>

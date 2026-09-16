@@ -8,7 +8,7 @@ This version automatically:
 3. Finds up to 20 listing-detail URLs.
 4. Opens each listing and extracts current public listing data and photo URLs.
 5. Writes feed-audit.txt so missing/uncertain fields are easy to review.
-6. Rebuilds leadingre.xml only when all LeadingRE-required fields are present.
+6. Rebuilds leadingre.xml only when required fields and key safety checks pass.
 
 The listing-set page remains the "control panel":
 add/remove a listing there, and the nightly feed follows it automatically.
@@ -50,7 +50,7 @@ SESSION = requests.Session()
 SESSION.headers.update(
     {
         "User-Agent": (
-            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/2.0; "
+            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/3.0; "
             "+https://angellhasman.github.io/leadingre-feed/)"
         ),
         "Accept-Language": "en-CA,en;q=0.9",
@@ -269,7 +269,125 @@ def first_json_value(objects: list[dict], keys: list[str]) -> str:
     return ""
 
 
-def extract_address(objects: list[dict], soup: BeautifulSoup, text: str) -> dict:
+def listing_title(soup: BeautifulSoup) -> str:
+    candidates = []
+    og = soup.find("meta", attrs={"property": "og:title"})
+    if og and og.get("content"):
+        candidates.append(clean_text(og.get("content")))
+    if soup.title:
+        candidates.append(clean_text(soup.title.get_text(" ", strip=True)))
+    for tag_name in ["h1", "h2"]:
+        tag = soup.find(tag_name)
+        if tag:
+            candidates.append(clean_text(tag.get_text(" ", strip=True)))
+    return " | ".join(x for x in candidates if x)
+
+
+CITY_SLUGS = [
+    ("west-vancouver", "West Vancouver"),
+    ("north-vancouver", "North Vancouver"),
+    ("vancouver-west", "Vancouver"),
+    ("new-westminster", "New Westminster"),
+    ("port-coquitlam", "Port Coquitlam"),
+    ("port-moody", "Port Moody"),
+    ("west-kelowna", "West Kelowna"),
+    ("sunshine-coast", "Sunshine Coast"),
+    ("white-rock", "White Rock"),
+    ("lake-country", "Lake Country"),
+    ("vancouver", "Vancouver"),
+    ("whistler", "Whistler"),
+    ("pemberton", "Pemberton"),
+    ("squamish", "Squamish"),
+    ("burnaby", "Burnaby"),
+    ("richmond", "Richmond"),
+    ("surrey", "Surrey"),
+    ("delta", "Delta"),
+    ("langley", "Langley"),
+    ("coquitlam", "Coquitlam"),
+    ("kelowna", "Kelowna"),
+    ("peachland", "Peachland"),
+    ("naramata", "Naramata"),
+    ("penticton", "Penticton"),
+]
+
+
+STREET_SUFFIXES = {
+    "street": "Street", "st": "Street",
+    "drive": "Drive", "dr": "Drive",
+    "road": "Road", "rd": "Road",
+    "avenue": "Avenue", "ave": "Avenue",
+    "court": "Court", "ct": "Court",
+    "lane": "Lane", "ln": "Lane",
+    "place": "Place", "pl": "Place",
+    "crescent": "Crescent", "cr": "Crescent", "cres": "Crescent",
+    "boulevard": "Boulevard", "blvd": "Boulevard",
+    "way": "Way",
+    "terrace": "Terrace",
+    "highway": "Highway", "hwy": "Highway",
+    "close": "Close",
+    "circle": "Circle",
+}
+
+
+def _parse_street_text(value: str) -> dict:
+    result = {
+        "StreetNumber": "",
+        "StreetName": "",
+        "StreetSuffix": "",
+        "UnitNumber": "",
+    }
+    value = clean_text(value).replace(",", " ").strip()
+    value = re.sub(r"^#\s*", "", value)
+    value = re.sub(r"\s+", " ", value)
+
+    # Unit + street number, e.g. PH2 1568 Alberni Street,
+    # 2901 1408 Robson Street, or 19 180 Sheerwater Court.
+    m = re.match(
+        r"^([A-Za-z]*\d+[A-Za-z-]*|\d+)\s+(\d+[A-Za-z-]?)\s+(.+)$",
+        value,
+        flags=re.I,
+    )
+    if m:
+        first, second, rest = m.groups()
+        # Two leading numeric tokens almost always mean Unit + StreetNumber
+        # on the selected MyRealPage inventory. An alphanumeric first token
+        # such as PH2 is also a unit.
+        if (first.isdigit() and second[0].isdigit()) or re.search(r"[A-Za-z]", first):
+            result["UnitNumber"] = first
+            result["StreetNumber"] = second
+        else:
+            result["StreetNumber"] = first
+            rest = f"{second} {rest}"
+    else:
+        m = re.match(r"^(\d+[A-Za-z-]?)\s+(.+)$", value)
+        if not m:
+            return result
+        result["StreetNumber"], rest = m.groups()
+
+    bits = rest.split()
+    if bits:
+        last = bits[-1].strip(".").lower()
+        if last in STREET_SUFFIXES:
+            result["StreetSuffix"] = STREET_SUFFIXES[last]
+            bits = bits[:-1]
+        result["StreetName"] = " ".join(bits).strip()
+    return result
+
+
+def _postal_from_slug(slug: str) -> tuple[str, str]:
+    """Return slug without trailing Canadian postal code, plus formatted postal code."""
+    m = re.search(
+        r"-(?P<a>[abceghj-nprstvxy]\d[abceghj-nprstvwxyz])-(?P<b>\d[abceghj-nprstvwxyz]\d)$",
+        slug,
+        flags=re.I,
+    )
+    if not m:
+        return slug, ""
+    postal = f"{m.group('a')} {m.group('b')}".upper()
+    return slug[:m.start()], postal
+
+
+def _address_from_url(url: str) -> dict:
     result = {
         "StreetNumber": "",
         "StreetName": "",
@@ -279,100 +397,123 @@ def extract_address(objects: list[dict], soup: BeautifulSoup, text: str) -> dict
         "PostalCode": "",
     }
 
-    address_dict = None
-    for obj in objects:
-        candidate = obj.get("address")
-        if isinstance(candidate, dict):
-            address_dict = candidate
-            break
-        if obj.get("@type") == "PostalAddress":
-            address_dict = obj
-            break
+    path = urlparse(url).path.rstrip("/")
+    m = re.search(r"/listing\.[^/]+?-(.+)\.(\d{6,})$", path, flags=re.I)
+    if not m:
+        return result
 
-    street_address = ""
-    if address_dict:
-        street_address = clean_text(address_dict.get("streetAddress"))
-        result["City"] = clean_text(address_dict.get("addressLocality"))
-        result["PostalCode"] = clean_text(address_dict.get("postalCode"))
+    slug = m.group(1).lower()
+    slug, postal = _postal_from_slug(slug)
+    result["PostalCode"] = postal
 
-    # Prefer a visible heading when JSON-LD has no street address.
-    if not street_address:
-        for tag_name in ["h1", "h2"]:
-            tag = soup.find(tag_name)
-            if tag:
-                candidate = clean_text(tag.get_text(" ", strip=True))
-                if candidate and "address on request" not in candidate.lower():
-                    street_address = candidate
-                    break
+    # Hidden-address records deliberately contain no street address.
+    if slug.startswith("address-on-request") or slug.startswith("address-request"):
+        for city_slug, city in CITY_SLUGS:
+            if city_slug in slug:
+                result["City"] = city
+                break
+        return result
 
-    # Remove common listing-title tail text if present.
-    street_address = re.split(
-        r"\s+(?:in|for sale|home for sale|condo for sale|land for sale)\b",
-        street_address,
-        maxsplit=1,
-        flags=re.I,
-    )[0].strip()
+    address_slug = slug
+    city_match_pos = None
+    for city_slug, city in CITY_SLUGS:
+        token = f"-{city_slug}"
+        pos = slug.find(token)
+        if pos != -1 and (city_match_pos is None or pos < city_match_pos):
+            city_match_pos = pos
+            result["City"] = city
+            address_slug = slug[:pos]
 
-    # Pull unit prefix if present: PH2 1568 Alberni Street, 2403 125 E 14th Street, etc.
-    unit = ""
-    street = street_address
-    m = re.match(r"^([A-Za-z]*\d+[A-Za-z-]*)\s+(\d+[A-Za-z-]?)\s+(.+)$", street_address)
-    if m and not re.match(r"^\d+$", m.group(1)):
-        unit, number, rest = m.groups()
-        result["UnitNumber"] = unit
-        result["StreetNumber"] = number
-        street = f"{number} {rest}"
+    # If the slug is only the city (e.g. PH2 Kengo Kuma URL), let title parsing fill address.
+    if result["City"] and not address_slug:
+        return result
 
-    if not result["StreetNumber"]:
-        m = re.match(r"^(\d+[A-Za-z-]?)\s+(.+)$", street)
-        if m:
-            result["StreetNumber"] = m.group(1)
-            rest = m.group(2)
-        else:
-            rest = street
-    else:
-        rest = street.split(" ", 1)[1] if " " in street else ""
+    street_text = address_slug.replace("-", " ").strip()
+    parsed = _parse_street_text(street_text)
+    result.update(parsed)
+    return result
 
-    suffixes = {
-        "street": "Street", "st": "Street",
-        "drive": "Drive", "dr": "Drive",
-        "road": "Road", "rd": "Road",
-        "avenue": "Avenue", "ave": "Avenue",
-        "court": "Court", "ct": "Court",
-        "lane": "Lane", "ln": "Lane",
-        "place": "Place", "pl": "Place",
-        "crescent": "Crescent", "cr": "Crescent", "cres": "Crescent",
-        "boulevard": "Boulevard", "blvd": "Boulevard",
-        "way": "Way",
-        "terrace": "Terrace",
+
+def _address_from_title(soup: BeautifulSoup, city_hint: str = "") -> dict:
+    result = {
+        "StreetNumber": "",
+        "StreetName": "",
+        "StreetSuffix": "",
+        "UnitNumber": "",
+        "City": city_hint,
+        "PostalCode": "",
     }
-    if rest:
-        bits = rest.replace(",", " ").split()
-        if bits:
-            last = bits[-1].strip(".").lower()
-            if last in suffixes:
-                result["StreetSuffix"] = suffixes[last]
-                bits = bits[:-1]
-            result["StreetName"] = " ".join(bits).strip()
+    title = listing_title(soup)
+    if not title or "address on request" in title.lower():
+        return result
 
-    # City fallback from page text.
+    # Prefer the part before " in <city>", ": ... for sale", or "|".
+    candidate = title.split("|", 1)[0].strip()
+    candidate = re.split(r"\s+in\s+[A-Za-z ]+(?::|$)", candidate, maxsplit=1, flags=re.I)[0]
+    candidate = re.split(r"\s*:\s*", candidate, maxsplit=1)[0].strip()
+
+    # Find a plausible address beginning with optional unit + street number.
+    m = re.search(
+        r"\b((?:[A-Za-z]*\d+[A-Za-z-]*\s+)?\d+[A-Za-z-]?\s+[A-Za-z0-9' .-]+"
+        r"(?:Street|St|Drive|Dr|Road|Rd|Avenue|Ave|Court|Ct|Lane|Ln|Place|Pl|"
+        r"Crescent|Cres|Boulevard|Blvd|Way|Terrace|Highway|Hwy))\b",
+        candidate,
+        flags=re.I,
+    )
+    if m:
+        result.update(_parse_street_text(m.group(1)))
+
     if not result["City"]:
-        for city in KNOWN_BC_CITIES:
+        for _slug, city in CITY_SLUGS:
+            if re.search(rf"\b{re.escape(city)}\b", title, flags=re.I):
+                result["City"] = city
+                break
+
+    pm = re.search(
+        r"\b([ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTVWXYZ])\s?(\d[ABCEGHJ-NPRSTVWXYZ]\d)\b",
+        title,
+        flags=re.I,
+    )
+    if pm:
+        result["PostalCode"] = f"{pm.group(1)} {pm.group(2)}".upper()
+
+    return result
+
+
+def extract_address(url: str, soup: BeautifulSoup, text: str) -> dict:
+    """
+    Property address extraction intentionally ignores generic JSON-LD address blocks.
+    MyRealPage pages contain the brokerage office address in structured metadata, which
+    previously caused every property to be incorrectly mapped to 1544 Marine Drive.
+    """
+    result = _address_from_url(url)
+
+    # If the URL omits the street address (for example, a short custom URL),
+    # use the listing title/heading rather than sitewide contact information.
+    if not result["StreetNumber"] or not result["StreetName"]:
+        title_result = _address_from_title(soup, result["City"])
+        for key, value in title_result.items():
+            if value and not result.get(key):
+                result[key] = value
+
+    # Safe city/postal fallbacks from visible listing text.
+    if not result["City"]:
+        for city in KNOWN_BC_CITIES + ["Sunshine Coast"]:
             if re.search(rf"\b{re.escape(city)}\b", text, flags=re.I):
                 result["City"] = city
                 break
 
-    # Postal code fallback from page text.
     if not result["PostalCode"]:
-        m = re.search(
+        pm = re.search(
             r"\b([ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTVWXYZ])\s?(\d[ABCEGHJ-NPRSTVWXYZ]\d)\b",
             text,
             flags=re.I,
         )
-        if m:
-            result["PostalCode"] = (m.group(1) + " " + m.group(2)).upper()
+        if pm:
+            result["PostalCode"] = f"{pm.group(1)} {pm.group(2)}".upper()
 
     return result
+
 
 
 def extract_price(lines: list[str], text: str, objects: list[dict]) -> str:
@@ -443,15 +584,17 @@ def extract_remarks(soup: BeautifulSoup, objects: list[dict]) -> str:
 
 def extract_mls(url: str, lines: list[str]) -> str:
     labelled = find_label_value(lines, ["MLS® Num", "MLS Num", "MLS® Number", "MLS Number"])
-    m = re.search(r"\bR\d{6,8}\b", labelled, re.I)
+    m = re.search(r"\b(?:R\d{6,8}|\d{8})\b", labelled, re.I)
     if m:
         return m.group(0).upper()
 
-    m = re.search(r"/listing\.(r\d{6,8})-", url, re.I)
+    # MyRealPage URL identifier immediately after "listing." is the source listing ID.
+    m = re.search(r"/listing\.((?:r\d{6,8})|(?:\d{8}))-", url, re.I)
     if m:
         return m.group(1).upper()
 
     return ""
+
 
 
 def extract_internal_id(url: str) -> str:
@@ -464,29 +607,37 @@ def extract_internal_id(url: str) -> str:
     return re.sub(r"[^A-Za-z0-9]+", "-", path).strip("-").upper()
 
 
-def map_property_type(lines: list[str], text: str) -> tuple[str, str]:
+def map_property_type(lines: list[str], soup: BeautifulSoup, url: str) -> tuple[str, str]:
     raw = find_label_value(
         lines,
         [
             "Property Type",
             "Dwelling Type",
             "Type",
+            "Building Type",
         ],
     )
-    hay = f"{raw} {text[:3000]}".lower()
+    title = listing_title(soup)
+    hay = f"{raw} {title} {url}".lower()
 
-    if re.search(r"\bland\b|\bvacant\b", hay):
+    # Specific classifications first.
+    if re.search(r"\bland\b|\bvacant land\b", hay):
         return "Land", "Land"
-    if re.search(r"\bcondo\b|\bapartment\b|\bpenthouse\b", hay):
+    if re.search(r"\bapartment/condo\b|\bapartment\b|\bcondo\b|\bpenthouse\b", hay):
         return "Residential", "Condominium"
     if re.search(r"\btownhouse\b|\btownhome\b", hay):
         return "Residential", "Townhouse"
     if re.search(r"\bduplex\b", hay):
         return "Residential", "Duplex"
-    if re.search(r"\bhouse\b|\bdetached\b|\bsingle family\b|\bchalet\b|\bestate\b", hay):
+    if re.search(r"\bhouse\b|\bsingle family\b|\bsingle-family\b|\bdetached\b|\bhome for sale\b|\bchalet\b", hay):
         return "Residential", "Single Family Residence"
 
+    # "Residential" alone is valid PropertyType but doesn't reliably identify subtype.
+    if "residential" in hay:
+        return "Residential", ""
+
     return "Residential", ""
+
 
 
 def numeric_label(lines: list[str], labels: list[str]) -> str:
@@ -573,14 +724,24 @@ def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listin
         if not image_ext and not any(term in low for term in good_terms):
             continue
 
-        # De-duplicate query-string variants of the same image.
-        key = (p.netloc.lower() + p.path).lower()
+        # De-duplicate alternate MyRealPage renditions of the same source photo.
+        # MyRealPage CDN variants generally preserve the same encoded original
+        # source as the final path segment while changing transformation segments.
+        if "myrealpage.com" in p.netloc.lower():
+            path_parts = [part for part in p.path.split("/") if part]
+            if path_parts:
+                key = f"{p.netloc.lower()}::{path_parts[-1].lower()}"
+            else:
+                key = (p.netloc.lower() + p.path).lower()
+        else:
+            key = (p.netloc.lower() + p.path).lower()
+
         if key in seen_path:
             continue
         seen_path.add(key)
         results.append(url)
 
-    return results[:100]
+    return results[:150]
 
 
 def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str], list[str]]:
@@ -593,8 +754,8 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     listing_key = f"MRP-{internal_id}"
     mls = extract_mls(final_url, lines)
 
-    address = extract_address(objects, soup, text)
-    property_type, subtype = map_property_type(lines, text)
+    address = extract_address(final_url, soup, text)
+    property_type, subtype = map_property_type(lines, soup, final_url)
 
     record = {
         "ListingKey": listing_key,
@@ -673,10 +834,33 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     if len(photos) < MIN_PHOTOS:
         fatal.append(f"only {len(photos)} usable photo URLs found; need at least {MIN_PHOTOS}")
 
+    # Safety checks for the two parser failures most likely to create misleading
+    # public data: accidentally using the brokerage office as the property address,
+    # or classifying a substantial residence as vacant land.
+    office_address_match = (
+        record.get("StreetNumber") == "1544"
+        and "Marine" in record.get("StreetName", "")
+        and record.get("City") == "West Vancouver"
+    )
+    if office_address_match:
+        fatal.append("property address incorrectly matches brokerage office address")
+
+    if record["InternetAddressDisplayYN"] == "1" and (
+        not record.get("StreetNumber") or not record.get("StreetName")
+    ):
+        fatal.append("public-address listing is missing a usable street address")
+
+    if record.get("PropertyType") == "Land" and (
+        record.get("BedroomsTotal") or record.get("LivingArea")
+    ):
+        fatal.append(
+            "suspicious Land classification on a listing that has bedrooms/living area"
+        )
+
     if not mls:
         warnings.append("no MLS number visible; using stable MyRealPage record ID as ListingId")
     if record["InternetAddressDisplayYN"] == "0":
-        warnings.append("address is hidden publicly; consider adding the true address in listing_overrides.json")
+        warnings.append("address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding")
     if not record["StreetNumber"] or not record["StreetName"]:
         warnings.append("street address not fully available")
     if not record["PostalCode"]:
@@ -688,7 +872,9 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     if not record["LivingArea"] and record["PropertyType"] == "Residential":
         warnings.append("living area unavailable")
     warnings.append("individual listing-agent attribution not yet enabled; using general Angell Hasman Member record")
-    warnings.append("full/half bathroom split not yet available; both fields sent blank")
+    warnings.append("full/half bathroom split not yet available; both Recommended fields are sent blank")
+    if len(photos) >= 150:
+        warnings.append("photo extractor reached its 150-photo safety cap; review for duplicates")
 
     return record, photos, fatal, warnings
 

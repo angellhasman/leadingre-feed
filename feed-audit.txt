@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-16 03:22:49 UTC
+Generated: 2026-09-16 03:25:52 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -37,7 +37,7 @@ Address:  , West Vancouver
 Address:  , West Vancouver V7V 1E4
    Price: 39980000
    Status: Active
-   Type: Residential / 
+   Type: Residential / Single Family Residence
    Bedrooms: 4
    Living area: 9863
    Photos: 30
@@ -45,7 +45,6 @@ Address:  , West Vancouver V7V 1E4
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 

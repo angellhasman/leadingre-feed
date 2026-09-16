@@ -23,6 +23,7 @@ IMPORTANT:
 
 from __future__ import annotations
 
+import base64
 import html as html_lib
 import json
 import re
@@ -50,7 +51,7 @@ SESSION = requests.Session()
 SESSION.headers.update(
     {
         "User-Agent": (
-            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/4.0; "
+            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.0; "
             "+https://angellhasman.github.io/leadingre-feed/)"
         ),
         "Accept-Language": "en-CA,en;q=0.9",
@@ -676,6 +677,41 @@ def _append_srcset(value: str, base_url: str, output: list[str]) -> None:
         output.append(url)
 
 
+def _decoded_myrealpage_source(url: str) -> str:
+    """Decode the original source embedded in MyRealPage CDN URLs when possible."""
+    try:
+        p = urlparse(url)
+        if "myrealpage.com" not in p.netloc.lower():
+            return ""
+        parts = [part for part in p.path.split("/") if part]
+        if not parts:
+            return ""
+        token = parts[-1]
+        token += "=" * ((4 - len(token) % 4) % 4)
+        return base64.urlsafe_b64decode(token).decode("utf-8", errors="ignore")
+    except Exception:
+        return ""
+
+
+def _is_non_listing_site_asset(url: str) -> bool:
+    """Reject site-wide branding/headshot assets that are not property photography."""
+    low = url.lower()
+
+    # Direct assets from the brokerage website (for example Max's headshot).
+    if "maxhasman.ca/_media/" in low or "maxhasman.ca/__media/" in low:
+        return True
+
+    # MyRealPage's image CDN can hide the original site asset inside a base64 path.
+    decoded = _decoded_myrealpage_source(url).lower()
+    if decoded:
+        if "max-hasman.myrealpagewebsite.com/_media/" in decoded or "max-hasman.myrealpagewebsite.com/__media/" in decoded:
+            return True
+        if any(term in decoded for term in ("logo", "headshot", "avatar", "agent", "profile")):
+            return True
+
+    return False
+
+
 def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listing_token: str) -> list[str]:
     candidates: list[str] = []
 
@@ -708,7 +744,7 @@ def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listin
     )
 
     bad_terms = (
-        "logo", "favicon", "icon", "avatar", "agent", "profile",
+        "logo", "favicon", "icon", "avatar", "agent", "profile", "headshot",
         "reciprocity", "facebook", "instagram", "linkedin", "youtube",
         "map", "marker", "captcha", "spinner",
     )
@@ -726,6 +762,8 @@ def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listin
             continue
         low = url.lower()
         if any(term in low for term in bad_terms):
+            continue
+        if _is_non_listing_site_asset(url):
             continue
 
         p = urlparse(url)

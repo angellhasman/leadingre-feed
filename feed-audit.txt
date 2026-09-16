@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-16 03:11:47 UTC
+Generated: 2026-09-16 03:22:49 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -37,7 +37,7 @@ Address:  , West Vancouver
 Address:  , West Vancouver V7V 1E4
    Price: 39980000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 4
    Living area: 9863
    Photos: 30
@@ -45,13 +45,14 @@ Address:  , West Vancouver V7V 1E4
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 3. R3061998
    ListingKey: MRP-107401309
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3061998-address-on-request-white-rock-v4b-2b3.107401309
-Address:  , White Rock
+Address:  , White Rock V4B 2B3
    Price: 32500000
    Status: Active
    Type: Residential / Single Family Residence
@@ -62,7 +63,6 @@ Address:  , White Rock
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - postal code unavailable
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
@@ -296,7 +296,7 @@ Address: 2901 1408 Robson Street, Vancouver V6G 1B9
 19. R3084509
    ListingKey: MRP-107408263
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3084509-5871-sunshine-coast-highway-sechelt-v0n-3a0.107408263
-Address: 5871 Sunshine Coast Highway, Sunshine Coast V0N 3A0
+Address: 5871 Sunshine Coast Highway, Sechelt V0N 3A0
    Price: 6880000
    Status: Active
    Type: Residential / Single Family Residence

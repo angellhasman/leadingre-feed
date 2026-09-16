@@ -63,7 +63,7 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3147443</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber />
       <StreetName />
       <StreetSuffix />
@@ -98,7 +98,7 @@
       <UnitNumber />
       <City>White Rock</City>
       <StateOrProvince>BC</StateOrProvince>
-      <PostalCode />
+      <PostalCode>V4B 2B3</PostalCode>
       <Country>CAN</Country>
       <ListPrice>32500000</ListPrice>
       <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3061998-address-on-request-white-rock-v4b-2b3.107401309</ListingURL>
@@ -544,7 +544,7 @@
       <StreetName>Sunshine Coast</StreetName>
       <StreetSuffix>Highway</StreetSuffix>
       <UnitNumber />
-      <City>Sunshine Coast</City>
+      <City>Sechelt</City>
       <StateOrProvince>BC</StateOrProvince>
       <PostalCode>V0N 3A0</PostalCode>
       <Country>CAN</Country>

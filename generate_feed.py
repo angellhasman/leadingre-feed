@@ -822,6 +822,25 @@ def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listin
         seen_path.add(key)
         results.append(_prefer_original_listing_image(url))
 
+    # Some MyRealPage listing pages expose the same gallery twice:
+    # once as the original S3 mrp-listings images and once through CloudFront.
+    # When the two sets have exactly the same photo count, keep the S3 originals
+    # and discard the duplicate CloudFront rendition set.
+    s3_urls = []
+    cloudfront_urls = []
+    for image_url in results:
+        parsed = urlparse(image_url)
+        host = parsed.netloc.lower()
+        path = parsed.path.lower()
+        if host == "s3.amazonaws.com" and path.startswith("/mrp-listings/"):
+            s3_urls.append(image_url)
+        elif host.endswith("cloudfront.net"):
+            cloudfront_urls.append(image_url)
+
+    if s3_urls and len(s3_urls) == len(cloudfront_urls):
+        cloudfront_set = set(cloudfront_urls)
+        results = [image_url for image_url in results if image_url not in cloudfront_set]
+
     return results[:150]
 
 

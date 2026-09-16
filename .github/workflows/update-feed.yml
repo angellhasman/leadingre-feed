@@ -3,8 +3,8 @@ name: Update LeadingRE XML Feed
 on:
   workflow_dispatch:
   schedule:
-    # LeadingRE recommends the completed file around 2:00-3:00 AM Central.
-    # 12:30 AM Vancouver time is normally 2:30 AM Central.
+    # 12:30 AM Vancouver time is normally 2:30 AM Central,
+    # inside LeadingRE's recommended overnight delivery window.
     - cron: "30 0 * * *"
       timezone: "America/Vancouver"
 
@@ -17,23 +17,23 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Install scraper dependencies
+      - name: Install dependencies
         run: python -m pip install --disable-pip-version-check requests beautifulsoup4 lxml
 
-      - name: Generate LeadingRE XML
+      - name: Generate and audit LeadingRE feed
         run: python generate_feed.py
 
-      - name: Commit refreshed XML
+      - name: Commit refreshed feed and audit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add leadingre.xml
+          git add leadingre.xml feed-audit.txt
           git commit -m "Refresh LeadingRE feed" || exit 0
           git push

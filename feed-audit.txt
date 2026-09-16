@@ -1,10 +1,10 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-16 16:51:34 UTC
+Generated: 2026-09-16 17:02:03 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
 Listings parsed: 20
-Total photo URLs: 1075
+Total photo URLs: 752
 Feed updated: YES
 Fatal issues: 0
 
@@ -121,7 +121,7 @@ Address: PH2 1568 Alberni Street, Vancouver V6G 2Z6
    Type: Residential / Condominium
    Bedrooms: 3
    Living area: 4502
-   Photos: 80
+   Photos: 40
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -136,7 +136,7 @@ Address: 3612 Marine Drive, West Vancouver V7V 1N4
    Type: Land / Land
    Bedrooms: [blank]
    Living area: [blank]
-   Photos: 26
+   Photos: 13
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -181,7 +181,7 @@ Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
    Type: Residential / Single Family Residence
    Bedrooms: 5
    Living area: 10343
-   Photos: 80
+   Photos: 40
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -196,7 +196,7 @@ Address: 3803 Sunridge Place, Whistler V0N 1B3
    Type: Residential / Single Family Residence
    Bedrooms: 6
    Living area: 7442
-   Photos: 80
+   Photos: 40
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -211,7 +211,7 @@ Address: 450 Macbeth Crescent, West Vancouver V7T 1V7
    Type: Residential / Single Family Residence
    Bedrooms: 6
    Living area: 10691
-   Photos: 80
+   Photos: 40
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -226,7 +226,7 @@ Address: 6693 Tapley Place, Whistler V6E 0C5
    Type: Residential / Single Family Residence
    Bedrooms: 5
    Living area: 5907
-   Photos: 80
+   Photos: 40
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -241,7 +241,7 @@ Address: 3205 Archibald Way, Whistler V8E 0B8
    Type: Residential / Single Family Residence
    Bedrooms: 6
    Living area: 6367
-   Photos: 80
+   Photos: 40
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -256,7 +256,7 @@ Address: 7313 Toni Sailer Lane, Whistler V8E 0E3
    Type: Residential / Single Family Residence
    Bedrooms: 4
    Living area: 3577
-   Photos: 60
+   Photos: 30
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
@@ -271,7 +271,7 @@ Address: 2955 Rosebery Avenue, West Vancouver V7V 3A5
    Type: Residential / Single Family Residence
    Bedrooms: 5
    Living area: 6884
-   Photos: 80
+   Photos: 40
    Fatal: none
    Warnings:
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record

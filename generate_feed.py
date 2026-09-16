@@ -50,7 +50,7 @@ SESSION = requests.Session()
 SESSION.headers.update(
     {
         "User-Agent": (
-            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/3.0; "
+            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/4.0; "
             "+https://angellhasman.github.io/leadingre-feed/)"
         ),
         "Accept-Language": "en-CA,en;q=0.9",
@@ -417,8 +417,11 @@ def _address_from_url(url: str) -> dict:
     address_slug = slug
     city_match_pos = None
     for city_slug, city in CITY_SLUGS:
-        token = f"-{city_slug}"
-        pos = slug.find(token)
+        if slug == city_slug or slug.startswith(city_slug + "-"):
+            pos = 0
+        else:
+            token = f"-{city_slug}"
+            pos = slug.find(token)
         if pos != -1 and (city_match_pos is None or pos < city_match_pos):
             city_match_pos = pos
             result["City"] = city
@@ -504,13 +507,22 @@ def extract_address(url: str, soup: BeautifulSoup, text: str) -> dict:
                 break
 
     if not result["PostalCode"]:
+        lines = page_lines(soup)
+        labelled_postal = find_label_value(
+            lines,
+            ["Postal Code", "PostalCode", "Postal / Zip Code", "Zip Code"],
+        )
         pm = re.search(
             r"\b([ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTVWXYZ])\s?(\d[ABCEGHJ-NPRSTVWXYZ]\d)\b",
-            text,
+            labelled_postal,
             flags=re.I,
         )
         if pm:
             result["PostalCode"] = f"{pm.group(1)} {pm.group(2)}".upper()
+
+    # Cosmetic normalization for public presentation.
+    if result["StreetName"]:
+        result["StreetName"] = result["StreetName"].title()
 
     return result
 
@@ -629,7 +641,7 @@ def map_property_type(lines: list[str], soup: BeautifulSoup, url: str) -> tuple[
         return "Residential", "Townhouse"
     if re.search(r"\bduplex\b", hay):
         return "Residential", "Duplex"
-    if re.search(r"\bhouse\b|\bsingle family\b|\bsingle-family\b|\bdetached\b|\bhome for sale\b|\bchalet\b", hay):
+    if re.search(r"\bhouse\b|\bsingle family\b|\bsingle-family\b|\bdetached\b|\bchalet\b", hay):
         return "Residential", "Single Family Residence"
 
     # "Residential" alone is valid PropertyType but doesn't reliably identify subtype.
@@ -865,6 +877,13 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
         warnings.append("street address not fully available")
     if not record["PostalCode"]:
         warnings.append("postal code unavailable")
+    if record["PostalCode"] == OFFICE["OfficePostalCode"] and not (
+        record.get("StreetNumber") == "1544" and "Marine" in record.get("StreetName", "")
+    ):
+        fatal.append(
+            "property postal code incorrectly matches brokerage office postal code; "
+            "use listing_overrides.json if this property genuinely shares that postal code"
+        )
     if not record["PropertySubType"]:
         warnings.append("PropertySubType could not be confidently mapped")
     if not record["BedroomsTotal"] and record["PropertyType"] == "Residential":

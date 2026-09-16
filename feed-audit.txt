@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-16 01:27:14 UTC
+Generated: 2026-09-16 01:37:40 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -16,10 +16,10 @@ INDEX PAGES READ
 1. R3041987
    ListingKey: MRP-107402265
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3041987-address-on-request-west-vancouver.107402265
-Address:  , West Vancouver V7V 1H8
+Address:  , West Vancouver
    Price: 58800000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 5
    Living area: 9944
    Photos: 36
@@ -27,6 +27,8 @@ Address:  , West Vancouver V7V 1H8
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
+     - postal code unavailable
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
@@ -50,10 +52,10 @@ Address:  , West Vancouver V7V 1E4
 3. R3061998
    ListingKey: MRP-107401309
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3061998-address-on-request-white-rock.107401309
-Address:  , White Rock V7V 1H8
+Address:  , White Rock
    Price: 32500000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 6
    Living area: 11811
    Photos: 36
@@ -61,21 +63,24 @@ Address:  , White Rock V7V 1H8
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
+     - postal code unavailable
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 4. R3058864
    ListingKey: MRP-107402198
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3058864-961-king-georges-way-west-vancouver.107402198
-Address: 961 king georges Way, West Vancouver V7V 1H8
+Address: 961 King Georges Way, West Vancouver V7S 1S6
    Price: 29800000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 7
    Living area: 11279
    Photos: 34
    Fatal: none
    Warnings:
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
@@ -99,15 +104,16 @@ Address:  , West Vancouver V7S 3K3
 6. R3126771
    ListingKey: MRP-108787675
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3126771-3824-sunridge-drive-whistler-v8e-0w1.108787675
-Address: 3824 sunridge Drive, Whistler V8E 0W1
+Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Price: 16995000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 6
    Living area: 7241
    Photos: 75
    Fatal: none
    Warnings:
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
@@ -129,7 +135,7 @@ Address: PH2 1568 Alberni Street, Vancouver V6G 2Z6
 8. R3158469
    ListingKey: MRP-109628086
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-west-vancouver.109628086
-Address: 3612 Marine Drive, Vancouver V7V 1N4
+Address: 3612 Marine Drive, West Vancouver V7V 1N4
    Price: 16800000
    Status: Active
    Type: Land / Land
@@ -144,37 +150,39 @@ Address: 3612 Marine Drive, Vancouver V7V 1N4
 9. R3154478
    ListingKey: MRP-109620749
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154478-3820-sunridge-drive-whistler-v8e-0w1.109620749
-Address: 3820 sunridge Drive, Whistler V8E 0W1
+Address: 3820 Sunridge Drive, Whistler V8E 0W1
    Price: 15800000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 6
    Living area: 6345
    Photos: 39
    Fatal: none
    Warnings:
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 10. 10394077
    ListingKey: MRP-109805863
    URL: https://maxhasman.ca/leading-real-estate.html/listing.10394077-20-180-sheerwater-court-kelowna-v1v-2x1.109805863
-Address: 20 180 sheerwater Court, Kelowna V1V 2X1
+Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
    Price: 13450000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 4
    Living area: 10568
    Photos: 46
    Fatal: none
    Warnings:
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 11. R3154347
    ListingKey: MRP-109519394
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154347-690-knockmaroon-road-west-vancouver-v7s-1r6.109519394
-Address: 690 knockmaroon Road, West Vancouver V7S 1R6
+Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
    Price: 12888000
    Status: Active
    Type: Residential / Single Family Residence
@@ -189,7 +197,7 @@ Address: 690 knockmaroon Road, West Vancouver V7S 1R6
 12. R3116508
    ListingKey: MRP-108596080
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3116508-3803-sunridge-place-whistler-v0n-1b3.108596080
-Address: 3803 sunridge Place, Whistler V0N 1B3
+Address: 3803 Sunridge Place, Whistler V0N 1B3
    Price: 11200000
    Status: Active
    Type: Residential / Single Family Residence
@@ -204,7 +212,7 @@ Address: 3803 sunridge Place, Whistler V0N 1B3
 13. R3160234
    ListingKey: MRP-109679749
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3160234-450-macbeth-crescent-west-vancouver-v7t-1v7.109679749
-Address: 450 macbeth Crescent, West Vancouver V7T 1V7
+Address: 450 Macbeth Crescent, West Vancouver V7T 1V7
    Price: 9688000
    Status: Active
    Type: Residential / Single Family Residence
@@ -219,7 +227,7 @@ Address: 450 macbeth Crescent, West Vancouver V7T 1V7
 14. R3136223
    ListingKey: MRP-109061930
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3136223-6693-tapley-place-whistler-v6e-0c5.109061930
-Address: 6693 tapley Place, Whistler V6E 0C5
+Address: 6693 Tapley Place, Whistler V6E 0C5
    Price: 9999999
    Status: Active
    Type: Residential / Single Family Residence
@@ -234,7 +242,7 @@ Address: 6693 tapley Place, Whistler V6E 0C5
 15. R3141069
    ListingKey: MRP-109180105
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3141069-3205-archibald-way-whistler-v8e-0b8.109180105
-Address: 3205 archibald Way, Whistler V8E 0B8
+Address: 3205 Archibald Way, Whistler V8E 0B8
    Price: 8950000
    Status: Active
    Type: Residential / Single Family Residence
@@ -249,7 +257,7 @@ Address: 3205 archibald Way, Whistler V8E 0B8
 16. R3111973
    ListingKey: MRP-108488999
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3111973-7313-toni-sailer-lane-whistler-v8e-0e3.108488999
-Address: 7313 toni sailer Lane, Whistler V8E 0E3
+Address: 7313 Toni Sailer Lane, Whistler V8E 0E3
    Price: 9500000
    Status: Active
    Type: Residential / Single Family Residence
@@ -264,7 +272,7 @@ Address: 7313 toni sailer Lane, Whistler V8E 0E3
 17. R3156574
    ListingKey: MRP-109575499
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3156574-2955-rosebery-avenue-west-vancouver-v7v-3a5.109575499
-Address: 2955 rosebery Avenue, West Vancouver V7V 3A5
+Address: 2955 Rosebery Avenue, West Vancouver V7V 3A5
    Price: 9288000
    Status: Active
    Type: Residential / Single Family Residence
@@ -279,10 +287,10 @@ Address: 2955 rosebery Avenue, West Vancouver V7V 3A5
 18. R3121000
    ListingKey: MRP-108787673
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3121000-2901-1408-robson-street-vancouver-west-v6g-1b9.108787673
-Address: 2901 1408 robson Street, Vancouver V6G 1B9
+Address: 2901 1408 Robson Street, Vancouver V6G 1B9
    Price: 6880000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / Condominium
    Bedrooms: 4
    Living area: 2769
    Photos: 44
@@ -297,26 +305,28 @@ Address: 2901 1408 robson Street, Vancouver V6G 1B9
 Address: 5871 Sunshine Coast Highway, Sunshine Coast V0N 3A0
    Price: 6880000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 5
    Living area: 7176
    Photos: 38
    Fatal: none
    Warnings:
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 20. 10389176
    ListingKey: MRP-109806075
    URL: https://maxhasman.ca/leading-real-estate.html/listing.10389176-19-180-sheerwater-court-kelowna-v1v-2x1.109806075
-Address: 19 180 sheerwater Court, Kelowna V1V 2X1
+Address: 19 180 Sheerwater Court, Kelowna V1V 2X1
    Price: 9900000
    Status: Active
-   Type: Residential / Single Family Residence
+   Type: Residential / 
    Bedrooms: 4
    Living area: 11663
    Photos: 41
    Fatal: none
    Warnings:
+     - PropertySubType could not be confidently mapped
      - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank

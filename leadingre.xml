@@ -35,14 +35,14 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3041987</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber />
       <StreetName />
       <StreetSuffix />
       <UnitNumber />
       <City>West Vancouver</City>
       <StateOrProvince>BC</StateOrProvince>
-      <PostalCode>V7V 1H8</PostalCode>
+      <PostalCode />
       <Country>CAN</Country>
       <ListPrice>58800000</ListPrice>
       <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3041987-address-on-request-west-vancouver.107402265</ListingURL>
@@ -91,14 +91,14 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3061998</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber />
       <StreetName />
       <StreetSuffix />
       <UnitNumber />
       <City>White Rock</City>
       <StateOrProvince>BC</StateOrProvince>
-      <PostalCode>V7V 1H8</PostalCode>
+      <PostalCode />
       <Country>CAN</Country>
       <ListPrice>32500000</ListPrice>
       <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3061998-address-on-request-white-rock.107401309</ListingURL>
@@ -119,14 +119,14 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3058864</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber>961</StreetNumber>
-      <StreetName>king georges</StreetName>
+      <StreetName>King Georges</StreetName>
       <StreetSuffix>Way</StreetSuffix>
       <UnitNumber />
       <City>West Vancouver</City>
       <StateOrProvince>BC</StateOrProvince>
-      <PostalCode>V7V 1H8</PostalCode>
+      <PostalCode>V7S 1S6</PostalCode>
       <Country>CAN</Country>
       <ListPrice>29800000</ListPrice>
       <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3058864-961-king-georges-way-west-vancouver.107402198</ListingURL>
@@ -175,9 +175,9 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3126771</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber>3824</StreetNumber>
-      <StreetName>sunridge</StreetName>
+      <StreetName>Sunridge</StreetName>
       <StreetSuffix>Drive</StreetSuffix>
       <UnitNumber />
       <City>Whistler</City>
@@ -236,7 +236,7 @@
       <StreetName>Marine</StreetName>
       <StreetSuffix>Drive</StreetSuffix>
       <UnitNumber />
-      <City>Vancouver</City>
+      <City>West Vancouver</City>
       <StateOrProvince>BC</StateOrProvince>
       <PostalCode>V7V 1N4</PostalCode>
       <Country>CAN</Country>
@@ -259,9 +259,9 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3154478</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber>3820</StreetNumber>
-      <StreetName>sunridge</StreetName>
+      <StreetName>Sunridge</StreetName>
       <StreetSuffix>Drive</StreetSuffix>
       <UnitNumber />
       <City>Whistler</City>
@@ -287,9 +287,9 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>10394077</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber>180</StreetNumber>
-      <StreetName>sheerwater</StreetName>
+      <StreetName>Sheerwater</StreetName>
       <StreetSuffix>Court</StreetSuffix>
       <UnitNumber>20</UnitNumber>
       <City>Kelowna</City>
@@ -317,7 +317,7 @@
       <PropertyType>Residential</PropertyType>
       <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>690</StreetNumber>
-      <StreetName>knockmaroon</StreetName>
+      <StreetName>Knockmaroon</StreetName>
       <StreetSuffix>Road</StreetSuffix>
       <UnitNumber />
       <City>West Vancouver</City>
@@ -345,7 +345,7 @@
       <PropertyType>Residential</PropertyType>
       <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>3803</StreetNumber>
-      <StreetName>sunridge</StreetName>
+      <StreetName>Sunridge</StreetName>
       <StreetSuffix>Place</StreetSuffix>
       <UnitNumber />
       <City>Whistler</City>
@@ -373,7 +373,7 @@
       <PropertyType>Residential</PropertyType>
       <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>450</StreetNumber>
-      <StreetName>macbeth</StreetName>
+      <StreetName>Macbeth</StreetName>
       <StreetSuffix>Crescent</StreetSuffix>
       <UnitNumber />
       <City>West Vancouver</City>
@@ -401,7 +401,7 @@
       <PropertyType>Residential</PropertyType>
       <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>6693</StreetNumber>
-      <StreetName>tapley</StreetName>
+      <StreetName>Tapley</StreetName>
       <StreetSuffix>Place</StreetSuffix>
       <UnitNumber />
       <City>Whistler</City>
@@ -429,7 +429,7 @@
       <PropertyType>Residential</PropertyType>
       <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>3205</StreetNumber>
-      <StreetName>archibald</StreetName>
+      <StreetName>Archibald</StreetName>
       <StreetSuffix>Way</StreetSuffix>
       <UnitNumber />
       <City>Whistler</City>
@@ -457,7 +457,7 @@
       <PropertyType>Residential</PropertyType>
       <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>7313</StreetNumber>
-      <StreetName>toni sailer</StreetName>
+      <StreetName>Toni Sailer</StreetName>
       <StreetSuffix>Lane</StreetSuffix>
       <UnitNumber />
       <City>Whistler</City>
@@ -485,7 +485,7 @@
       <PropertyType>Residential</PropertyType>
       <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>2955</StreetNumber>
-      <StreetName>rosebery</StreetName>
+      <StreetName>Rosebery</StreetName>
       <StreetSuffix>Avenue</StreetSuffix>
       <UnitNumber />
       <City>West Vancouver</City>
@@ -511,9 +511,9 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3121000</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType>Condominium</PropertySubType>
       <StreetNumber>1408</StreetNumber>
-      <StreetName>robson</StreetName>
+      <StreetName>Robson</StreetName>
       <StreetSuffix>Street</StreetSuffix>
       <UnitNumber>2901</UnitNumber>
       <City>Vancouver</City>
@@ -539,7 +539,7 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3084509</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber>5871</StreetNumber>
       <StreetName>Sunshine Coast</StreetName>
       <StreetSuffix>Highway</StreetSuffix>
@@ -567,9 +567,9 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>10389176</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType>Single Family Residence</PropertySubType>
+      <PropertySubType />
       <StreetNumber>180</StreetNumber>
-      <StreetName>sheerwater</StreetName>
+      <StreetName>Sheerwater</StreetName>
       <StreetSuffix>Court</StreetSuffix>
       <UnitNumber>19</UnitNumber>
       <City>Kelowna</City>

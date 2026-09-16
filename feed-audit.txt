@@ -1,0 +1,343 @@
+ANGELL HASMAN -> LEADINGRE FEED AUDIT
+Generated: 2026-09-16 01:17:42 UTC
+
+Listing-set URL: https://maxhasman.ca/leading-real-estate.html
+Listings discovered: 20
+Listings parsed: 20
+Total photo URLs: 1749
+Feed updated: YES
+Fatal issues: 0
+
+INDEX PAGES READ
+- INDEX PAGE: https://maxhasman.ca/leading-real-estate.html
+- INDEX PAGE: https://maxhasman.ca/leading-real-estate.html?_pg=1
+- INDEX PAGE: https://maxhasman.ca/leading-real-estate.html?_pg=2
+
+1. R3041987
+   ListingKey: MRP-107402265
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3041987-address-on-request-west-vancouver.107402265
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 58800000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 5
+   Living area: 9944
+   Photos: 75
+   Fatal: none
+   Warnings:
+     - address is hidden publicly; consider adding the true address in listing_overrides.json
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+2. R3147443
+   ListingKey: MRP-107402276
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3147443-address-on-request-west-vancouver-v7v-1e4.107402276
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 39980000
+   Status: Active
+   Type: Residential / 
+   Bedrooms: 4
+   Living area: 9863
+   Photos: 63
+   Fatal: none
+   Warnings:
+     - address is hidden publicly; consider adding the true address in listing_overrides.json
+     - street address not fully available
+     - PropertySubType could not be confidently mapped
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+3. R3061998
+   ListingKey: MRP-107401309
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3061998-address-on-request-white-rock.107401309
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 32500000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 6
+   Living area: 11811
+   Photos: 74
+   Fatal: none
+   Warnings:
+     - address is hidden publicly; consider adding the true address in listing_overrides.json
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+4. R3058864
+   ListingKey: MRP-107402198
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3058864-961-king-georges-way-west-vancouver.107402198
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 29800000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 7
+   Living area: 11279
+   Photos: 71
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+5. R3136700
+   ListingKey: MRP-109085993
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3136700-address-on-request-west-vancouver-v7s-3k3.109085993
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 23750000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 5
+   Living area: 9549
+   Photos: 88
+   Fatal: none
+   Warnings:
+     - address is hidden publicly; consider adding the true address in listing_overrides.json
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+6. R3126771
+   ListingKey: MRP-108787675
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3126771-3824-sunridge-drive-whistler-v8e-0w1.108787675
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 16995000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 6
+   Living area: 7241
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+7. R3158164
+   ListingKey: MRP-109623812
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158164-vancouver.109623812
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 16800000
+   Status: Active
+   Type: Residential / Condominium
+   Bedrooms: 3
+   Living area: 4502
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+8. R3158469
+   ListingKey: MRP-109628086
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-west-vancouver.109628086
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 16800000
+   Status: Active
+   Type: Land / Land
+   Bedrooms: [blank]
+   Living area: [blank]
+   Photos: 48
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+9. R3154478
+   ListingKey: MRP-109620749
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154478-3820-sunridge-drive-whistler-v8e-0w1.109620749
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 15800000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 6
+   Living area: 6345
+   Photos: 81
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+10. MRP-109805863
+   ListingKey: MRP-109805863
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.10394077-180-sheerwater-court-kelowna-v1v-2x1.109805863
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 13450000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 4
+   Living area: 10568
+   Photos: 95
+   Fatal: none
+   Warnings:
+     - no MLS number visible; using stable MyRealPage record ID as ListingId
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+11. R3154347
+   ListingKey: MRP-109519394
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154347-690-knockmaroon-road-west-vancouver-v7s-1r6.109519394
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 12888000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 5
+   Living area: 10343
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+12. R3116508
+   ListingKey: MRP-108596080
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3116508-3803-sunridge-place-whistler-v0n-1b3.108596080
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 11200000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 6
+   Living area: 7442
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+13. R3160234
+   ListingKey: MRP-109679749
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3160234-450-macbeth-crescent-west-vancouver-v7t-1v7.109679749
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 9688000
+   Status: Active
+   Type: Land / Land
+   Bedrooms: 6
+   Living area: 10691
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+14. R3136223
+   ListingKey: MRP-109061930
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3136223-6693-tapley-place-whistler-v6e-0c5.109061930
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 9999999
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 5
+   Living area: 5907
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+15. R3141069
+   ListingKey: MRP-109180105
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3141069-3205-archibald-way-whistler-v8e-0b8.109180105
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 8950000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 6
+   Living area: 6367
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+16. R3111973
+   ListingKey: MRP-108488999
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3111973-7313-toni-sailer-lane-whistler-v8e-0e3.108488999
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 9500000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 4
+   Living area: 3577
+   Photos: 99
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+17. R3156574
+   ListingKey: MRP-109575499
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3156574-2955-rosebery-avenue-west-vancouver-v7v-3a5.109575499
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 9288000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 5
+   Living area: 6884
+   Photos: 100
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+18. R3121000
+   ListingKey: MRP-108787673
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3121000-2901-1408-robson-street-vancouver-west-v6g-1b9.108787673
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 6880000
+   Status: Active
+   Type: Residential / 
+   Bedrooms: 4
+   Living area: 2769
+   Photos: 91
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - PropertySubType could not be confidently mapped
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+19. R3084509
+   ListingKey: MRP-107408263
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3084509-5871-sunshine-coast-highway-sunshine-coast-v0n-3a0.107408263
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 6880000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Bedrooms: 5
+   Living area: 7176
+   Photos: 79
+   Fatal: none
+   Warnings:
+     - street address not fully available
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank
+
+20. MRP-109806075
+   ListingKey: MRP-109806075
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.10389176-19-180-sheerwater-court-kelowna-v1v-2x1.109806075
+Address:  #203 - 1544 Marine Drive, West Vancouver V7V 1H8
+   Price: 9900000
+   Status: Active
+   Type: Residential / 
+   Bedrooms: 4
+   Living area: 11663
+   Photos: 85
+   Fatal: none
+   Warnings:
+     - no MLS number visible; using stable MyRealPage record ID as ListingId
+     - street address not fully available
+     - PropertySubType could not be confidently mapped
+     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
+     - full/half bathroom split not yet available; both fields sent blank

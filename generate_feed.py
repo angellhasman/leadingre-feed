@@ -51,7 +51,7 @@ SESSION = requests.Session()
 SESSION.headers.update(
     {
         "User-Agent": (
-            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.0; "
+            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.1; "
             "+https://angellhasman.github.io/leadingre-feed/)"
         ),
         "Accept-Language": "en-CA,en;q=0.9",
@@ -69,7 +69,7 @@ OFFICE = {
     "OfficePostalCode": "V7V 1H8",
     "OfficeCountry": "CAN",
     "OfficePhone": "604-921-1188",
-    "OfficeEmail": "",
+    "OfficeEmail": "info@angellhasman.ca",
     "OfficeMlsId": "V002321",
 }
 
@@ -82,7 +82,7 @@ GENERAL_MEMBER = {
     "MemberFirstName": "Angell Hasman",
     "MemberStatus": "Active",
     "MemberMobilePhone": "",
-    "MemberEmail": "",
+    "MemberEmail": "info@angellhasman.ca",
 }
 
 KNOWN_BC_CITIES = [
@@ -712,6 +712,37 @@ def _is_non_listing_site_asset(url: str) -> bool:
     return False
 
 
+
+def _prefer_original_listing_image(url: str) -> str:
+    """
+    Prefer the original public listing image behind MyRealPage's resized CDN URL.
+
+    MyRealPage listing pages often expose 320px thumbnail renditions in the HTML.
+    The CDN URL embeds the original S3 listing-photo URL as its final base64 path
+    segment. LeadingRE recommends substantially larger listing images, so when the
+    embedded source is a genuine mrp-listings image we send that original instead.
+
+    Non-MyRealPage URLs (for example direct CloudFront listing photos) are left
+    unchanged.
+    """
+    source = _decoded_myrealpage_source(url)
+    if not source:
+        return url
+
+    try:
+        p = urlparse(source)
+    except Exception:
+        return url
+
+    host = p.netloc.lower()
+    path = p.path.lower()
+    if host == "s3.amazonaws.com" and path.startswith("/mrp-listings/"):
+        if re.search(r"\.(?:jpe?g|webp|png)$", p.path, re.I):
+            # Use HTTPS for the public original image.
+            return urlunparse(("https", p.netloc, p.path, p.params, p.query, ""))
+
+    return url
+
 def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listing_token: str) -> list[str]:
     candidates: list[str] = []
 
@@ -789,7 +820,7 @@ def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listin
         if key in seen_path:
             continue
         seen_path.add(key)
-        results.append(url)
+        results.append(_prefer_original_listing_image(url))
 
     return results[:150]
 

@@ -207,13 +207,13 @@
       <StreetNumber>1568</StreetNumber>
       <StreetName>Alberni</StreetName>
       <StreetSuffix>Street</StreetSuffix>
-      <UnitNumber>PH2</UnitNumber>
+      <UnitNumber>ph2</UnitNumber>
       <City>Vancouver</City>
       <StateOrProvince>BC</StateOrProvince>
       <PostalCode>V6G 2Z6</PostalCode>
       <Country>CAN</Country>
       <ListPrice>16800000</ListPrice>
-      <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3158164-vancouver.109623812</ListingURL>
+      <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3158164-ph2-1568-alberni-street-vancouver-v6g-2z6.109623812</ListingURL>
       <PublicRemarks>Penthouse 2 at Alberni by Kengo Kuma is an extraordinary three-level, three bedroom residence perched 43 storeys above Downtown Vancouver. Experience nearly 5,800 SQ FT of refined indoor-outdoor living with sweeping 270° views of Coal Harbour, Stanley Park, and North Shore Mountains. Highlights include entertainment size principal rooms, 20ft ceilings in the living area, sensational gourmet kitchen, formal dining, media room and large primary bedroom suite with en-suite bathroom and terrace with soaking tub. A glass elevator connects all 3 levels to a private rooftop terrace featuring a glass-bottom pool and spa. Additional amenities include 5-car garage parking, storage, bike and wine lockers, and world-class facilities with concierge, indoor pool and jacuzzi, sauna, gym, and music room.</PublicRemarks>
       <BedroomsTotal>3</BedroomsTotal>
       <BathroomsFull />
@@ -241,7 +241,7 @@
       <PostalCode>V7V 1N4</PostalCode>
       <Country>CAN</Country>
       <ListPrice>16800000</ListPrice>
-      <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3158469-west-vancouver.109628086</ListingURL>
+      <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3158469-3612-marine-drive-west-vancouver-v7v-1n4.109628086</ListingURL>
       <PublicRemarks>A truly extraordinary opportunity to acquire one of West Vancouver’s most remarkable waterfront properties. Set on approximately 0.64 acres with an estimated 235ft of natural shoreline, this vacant oceanfront building site offers a rare canvas for a world-class luxury residence in one of the city’s most prized locations. Proposed architectural plans and renderings by world-renowned Arno Matis Architecture envision the striking “Yacht House,” designed to integrate dramatically with the site’s natural rock formations, topography, and waterfront setting. Sweeping 180° city, ocean, and sunset views, combined with exceptional privacy and a direct connection to the shoreline, create an irreplaceable setting for a once in a generation architectural masterpiece on a landmark waterfront estate.</PublicRemarks>
       <BedroomsTotal />
       <BathroomsFull />
@@ -3539,7 +3539,7 @@
       <MediaKey>MRP-109519394-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
-      <MediaURL>https://s3.amazonaws.com/mrp-listings/4/9/3/109519394/e082bbeb39eefc199d6bebe5a16ed102.jpeg</MediaURL>
+      <MediaURL>https://s3.amazonaws.com/mrp-listings/4/9/3/109519394/1c9f1edba82b5fc756fefc798e8753e7.jpeg</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109519394</ResourceRecordID>
     </Media>
@@ -3547,7 +3547,7 @@
       <MediaKey>MRP-109519394-PHOTO-2</MediaKey>
       <Order>2</Order>
       <MediaCategory>Photo</MediaCategory>
-      <MediaURL>https://s3.amazonaws.com/mrp-listings/4/9/3/109519394/1c9f1edba82b5fc756fefc798e8753e7.jpeg</MediaURL>
+      <MediaURL>https://s3.amazonaws.com/mrp-listings/4/9/3/109519394/e082bbeb39eefc199d6bebe5a16ed102.jpeg</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109519394</ResourceRecordID>
     </Media>

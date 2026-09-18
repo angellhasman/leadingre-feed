@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-17 07:35:55 UTC
+Generated: 2026-09-18 07:34:53 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -114,8 +114,8 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
 
 7. R3158164
    ListingKey: MRP-109623812
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158164-vancouver.109623812
-Address: PH2 1568 Alberni Street, Vancouver V6G 2Z6
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158164-ph2-1568-alberni-street-vancouver-v6g-2z6.109623812
+Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
    Price: 16800000
    Status: Active
    Type: Residential / Condominium
@@ -129,7 +129,7 @@ Address: PH2 1568 Alberni Street, Vancouver V6G 2Z6
 
 8. R3158469
    ListingKey: MRP-109628086
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-west-vancouver.109628086
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-3612-marine-drive-west-vancouver-v7v-1n4.109628086
 Address: 3612 Marine Drive, West Vancouver V7V 1N4
    Price: 16800000
    Status: Active

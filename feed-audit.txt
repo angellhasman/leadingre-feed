@@ -1,10 +1,10 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-19 07:33:23 UTC
+Generated: 2026-09-19 17:06:59 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
 Listings parsed: 20
-Total photo URLs: 752
+Total photo URLs: 729
 Virtual tours: 13
 Feed updated: YES
 Fatal issues: 0
@@ -133,7 +133,7 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Bathroom source: listing_overrides.json (MLS-verified fallback)
    Virtual tour: https://www.youtube.com/watch?v=AnR31I9qGxs
    Living area: 7241
-   Photos: 72
+   Photos: 49
    Fatal: none
    Warnings:
 

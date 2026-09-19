@@ -9,8 +9,9 @@ This version automatically:
 4. Opens each listing and extracts current public listing data and photo URLs.
 5. Uses the public "Listed by" brokerage disclosure to distinguish Malcolm/Max
    inventory from office reciprocity inventory.
-6. Writes feed-audit.txt so missing/uncertain fields are easy to review.
-7. Rebuilds leadingre.xml only when required fields and key safety checks pass.
+6. Extracts the MLS full/half bathroom split exposed on MyRealPage detail pages.
+7. Writes feed-audit.txt so missing/uncertain fields are easy to review.
+8. Rebuilds leadingre.xml only when required fields and key safety checks pass.
 
 The listing-set page remains the "control panel":
 add/remove a listing there, and the nightly feed follows it automatically.
@@ -55,7 +56,7 @@ SESSION = requests.Session()
 SESSION.headers.update(
     {
         "User-Agent": (
-            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.3; "
+            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.5; "
             "+https://angellhasman.github.io/leadingre-feed/)"
         ),
         "Accept-Language": "en-CA,en;q=0.9",
@@ -746,6 +747,167 @@ def map_property_type(lines: list[str], soup: BeautifulSoup, url: str) -> tuple[
 
 
 
+def extract_bathroom_split(lines: list[str], text: str, raw_html: str = "") -> tuple[str, str, str]:
+    """
+    Extract MyRealPage's MLS bathroom breakdown.
+
+    Preferred source is the aggregate detail text MyRealPage exposes, e.g.
+        Bathrooms: 5.0 (Full:4/Half:1)
+
+    If that aggregate is not present, fall back to the detailed bathroom table.
+    MyRealPage classifies a 2-piece room as a half bath. Its 3- and 4-piece
+    rooms are counted here with BathroomsFull. This aligns with LeadingRE's
+    guidance that BathroomsFull may include three-quarter bathrooms when the
+    separate BathroomsThreeQuarter field is not being used.
+
+    Returns (full, half, total). Values are strings so they can be written
+    directly into the LeadingRE XML. We deliberately do not guess from a total
+    bathroom count alone.
+    """
+    full = ""
+    half = ""
+    total = ""
+
+    # Include script/hidden text from the raw HTML as well as visible page text.
+    # Some MyRealPage layouts expose Full/Half only in embedded markup/data.
+    raw_search_text = ""
+    if raw_html:
+        raw_search_text = html_lib.unescape(raw_html)
+        raw_search_text = re.sub(r"<[^>]+>", " ", raw_search_text)
+    search_text = text + "\n" + raw_search_text
+
+    # 1) Best source: explicit MyRealPage Full/Half aggregate.
+    complete = re.search(
+        r"\bBathrooms?\s*:\s*(\d+(?:\.\d+)?)\s*"
+        r"\(\s*Full\s*:\s*(\d+)\s*/\s*Half\s*:\s*(\d+)\s*\)",
+        search_text,
+        flags=re.I | re.S,
+    )
+    if complete:
+        total_raw, full, half = complete.groups()
+        try:
+            total_num = float(total_raw)
+            total = str(int(total_num)) if total_num.is_integer() else str(total_num)
+        except ValueError:
+            total = total_raw
+        return full, half, total
+
+    # 2) Some layouts split the Full/Half part across DOM nodes.
+    split = re.search(
+        r"\bFull\s*:\s*(\d+)\s*/\s*Half\s*:\s*(\d+)\b",
+        search_text,
+        flags=re.I | re.S,
+    )
+    if split:
+        full, half = split.groups()
+        total_match = re.search(
+            r"\bBathrooms?\s*:\s*(\d+(?:\.\d+)?)",
+            search_text,
+            flags=re.I,
+        )
+        if total_match:
+            total_raw = total_match.group(1)
+            try:
+                total_num = float(total_raw)
+                total = str(int(total_num)) if total_num.is_integer() else str(total_num)
+            except ValueError:
+                total = total_raw
+        return full, half, total
+
+    # 3) Embedded data fallback: common JSON/RESO-style field names.
+    # This catches MyRealPage pages that keep the split in script data rather than
+    # visible text. Require both values so we never invent a split.
+    full_match = re.search(
+        r'["\']?(?:BathroomsFull|bathroomsFull|FullBathrooms|fullBathrooms)["\']?\s*[:=]\s*["\']?(\d+)',
+        raw_html,
+        flags=re.I,
+    ) if raw_html else None
+    half_match = re.search(
+        r'["\']?(?:BathroomsHalf|bathroomsHalf|HalfBathrooms|halfBathrooms)["\']?\s*[:=]\s*["\']?(\d+)',
+        raw_html,
+        flags=re.I,
+    ) if raw_html else None
+    if full_match and half_match:
+        full = full_match.group(1)
+        half = half_match.group(1)
+        total = str(int(full) + int(half))
+        return full, half, total
+
+    # 4) Fallback: count the detailed bathroom table.
+    # Look specifically for the standalone "Bathrooms:" heading and stop before
+    # the next detail section so unrelated numbers are never counted.
+    heading_index = None
+    for i, line in enumerate(lines):
+        if clean_text(line).strip().lower() == "bathrooms:":
+            heading_index = i
+            break
+
+    if heading_index is not None:
+        stop_prefixes = (
+            "other details:", "listing info:", "land info:",
+            "association fee:", "age restrictions:",
+            "property disclosure:", "status:", "restrictions:",
+        )
+        pieces: list[int] = []
+        for line in lines[heading_index + 1 : heading_index + 80]:
+            normalized = clean_text(line).strip().lower()
+            if normalized.startswith(stop_prefixes):
+                break
+            if re.fullmatch(r"[1-4]", normalized):
+                pieces.append(int(normalized))
+
+        if pieces:
+            full_count = sum(1 for value in pieces if value >= 3)
+            half_count = sum(1 for value in pieces if value == 2)
+            if full_count or half_count:
+                full = str(full_count)
+                half = str(half_count)
+                total = str(full_count + half_count)
+                return full, half, total
+
+    return "", "", ""
+
+
+def alternate_bathroom_urls(listing_url: str) -> list[str]:
+    """Return existing MyRealPage detail-page variants to try for richer MLS data."""
+    parsed = urlparse(listing_url)
+    m = re.search(r"(/listing\..+)$", parsed.path, flags=re.I)
+    if not m:
+        return []
+    suffix = m.group(1)
+    candidates = []
+    for page in ("/mylistings.html", "/recip.html"):
+        candidate = urlunparse((parsed.scheme, parsed.netloc, page + suffix, "", "", ""))
+        if candidate != listing_url and candidate not in candidates:
+            candidates.append(candidate)
+    return candidates
+
+
+def get_bathroom_split_with_fallback(
+    listing_url: str,
+    lines: list[str],
+    text: str,
+    raw_html: str,
+) -> tuple[str, str, str, str]:
+    """Try the selected-page detail first, then existing My Listings/Reciprocity variants."""
+    full, half, total = extract_bathroom_split(lines, text, raw_html)
+    if full != "" and half != "":
+        return full, half, total, listing_url
+
+    for candidate in alternate_bathroom_urls(listing_url):
+        try:
+            alt_soup, alt_html, alt_final = fetch(candidate)
+        except Exception:
+            continue
+        alt_lines = page_lines(alt_soup)
+        alt_text = "\n".join(alt_lines)
+        full, half, total = extract_bathroom_split(alt_lines, alt_text, alt_html)
+        if full != "" and half != "":
+            return full, half, total, alt_final
+
+    return "", "", "", ""
+
+
 def numeric_label(lines: list[str], labels: list[str]) -> str:
     raw = find_label_value(lines, labels)
     m = re.search(r"[\d,]+(?:\.\d+)?", raw)
@@ -950,6 +1112,9 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     address = extract_address(final_url, soup, text)
     property_type, subtype = map_property_type(lines, soup, final_url)
     brokerage_disclosure = extract_listing_brokerage_disclosure(lines, text)
+    bathrooms_full, bathrooms_half, bathrooms_total, bathroom_source_url = get_bathroom_split_with_fallback(
+        final_url, lines, text, raw_html
+    )
 
     record = {
         "ListingKey": listing_key,
@@ -970,8 +1135,8 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
         "ListingURL": final_url,
         "PublicRemarks": extract_remarks(soup, objects),
         "BedroomsTotal": numeric_label(lines, ["Bedrooms", "Bedrooms Total"]),
-        "BathroomsFull": "",
-        "BathroomsHalf": "",
+        "BathroomsFull": bathrooms_full,
+        "BathroomsHalf": bathrooms_half,
         "StandardStatus": extract_status(lines, text),
         "LivingArea": numeric_label(lines, ["Floor Area", "Floor Area Total", "Living Area"]),
         "LivingAreaUnits": "Square Feet",
@@ -999,6 +1164,8 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     ).strip()
     record["_BrokerageDisclosure"] = brokerage_disclosure
     record["_AgentAssignmentReason"] = agent_reason
+    record["_BathroomsTotalSource"] = bathrooms_total
+    record["_BathroomSourceURL"] = bathroom_source_url
 
     photos = extract_photo_urls(
         soup,
@@ -1087,7 +1254,23 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
         warnings.append("living area unavailable")
     if agent_warning:
         warnings.append(agent_warning)
-    warnings.append("full/half bathroom split not yet available; both Recommended fields are sent blank")
+
+    if record["PropertyType"] == "Residential":
+        if record.get("BathroomsFull") == "" or record.get("BathroomsHalf") == "":
+            warnings.append(
+                "full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing"
+            )
+        else:
+            source_total = record.get("_BathroomsTotalSource", "")
+            if source_total:
+                try:
+                    if int(source_total) != int(record["BathroomsFull"]) + int(record["BathroomsHalf"]):
+                        warnings.append(
+                            "bathroom total does not equal Full + Half on the source page; review this listing"
+                        )
+                except (TypeError, ValueError):
+                    pass
+
     if len(photos) >= 150:
         warnings.append("photo extractor reached its 150-photo safety cap; review for duplicates")
 
@@ -1233,6 +1416,11 @@ def write_audit(
                 f"   Agent assignment: {record.get('_AgentAssignmentReason') or '[blank]'}",
                 f"   Brokerage disclosure: {record.get('_BrokerageDisclosure') or '[not found]'}",
                 f"   Bedrooms: {record.get('BedroomsTotal') or '[blank]'}",
+                f"   Bathrooms: "
+                f"{record.get('_BathroomsTotalSource') or '[unknown total]'} total "
+                f"({record.get('BathroomsFull') or '[blank]'} full / "
+                f"{record.get('BathroomsHalf') or '[blank]'} half)",
+                f"   Bathroom source: {record.get('_BathroomSourceURL') or '[not found]'}",
                 f"   Living area: {record.get('LivingArea') or '[blank]'}",
                 f"   Photos: {len(photos)}",
                 f"   Fatal: {', '.join(fatal) if fatal else 'none'}",

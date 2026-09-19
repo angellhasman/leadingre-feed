@@ -1,11 +1,48 @@
 {
-  "R3061998": {
-    "PostalCode": "V4B 2B3"
-  },
-  "R3084509": {
-    "City": "Sechelt"
+  "R3041987": {
+    "BathroomsFull": 5,
+    "BathroomsHalf": 2
   },
   "R3147443": {
-    "PropertySubType": "Single Family Residence"
+    "BathroomsFull": 5,
+    "BathroomsHalf": 1
+  },
+  "R3061998": {
+    "PostalCode": "V4B 2B3",
+    "BathroomsFull": 6,
+    "BathroomsHalf": 2
+  },
+  "R3058864": {
+    "BathroomsFull": 8,
+    "BathroomsHalf": 1
+  },
+  "R3136700": {
+    "BathroomsFull": 5,
+    "BathroomsHalf": 3
+  },
+  "R3126771": {
+    "BathroomsFull": 7,
+    "BathroomsHalf": 0
+  },
+  "R3154478": {
+    "BathroomsFull": 5,
+    "BathroomsHalf": 2
+  },
+  "10394077": {
+    "BathroomsFull": 6,
+    "BathroomsHalf": 1
+  },
+  "R3121000": {
+    "BathroomsFull": 3,
+    "BathroomsHalf": 1
+  },
+  "R3084509": {
+    "City": "Sechelt",
+    "BathroomsFull": 6,
+    "BathroomsHalf": 2
+  },
+  "10389176": {
+    "BathroomsFull": 5,
+    "BathroomsHalf": 2
   }
 }

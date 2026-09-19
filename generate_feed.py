@@ -36,7 +36,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse, urlunparse
+from urllib.parse import urljoin, urlparse, urlunparse, parse_qs
 
 import requests
 from bs4 import BeautifulSoup
@@ -1127,34 +1127,69 @@ def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listin
 
 def extract_virtual_tour_url(soup: BeautifulSoup, raw_html: str, base_url: str) -> str:
     """
-    Extract one MLS-supplied listing virtual-tour/video URL when it is clearly
-    identified as a property tour on the MyRealPage detail page.
+    Extract one MLS-supplied YouTube property-tour URL when the MyRealPage
+    detail page explicitly identifies the link as a virtual tour/video.
 
     LeadingRE supports one Residential media record with category
-    "Unbranded Virtual Tour". We deliberately avoid generic YouTube/social
-    links and only accept links whose label/markup identifies them as a tour,
-    or explicit virtual-tour fields embedded in page data.
+    "Unbranded Virtual Tour". To avoid false positives, this feed accepts only
+    actual YouTube video URLs (not channel pages, playlists, the brokerage
+    homepage, or generic social links).
     """
     tour_terms = (
         "virtual tour",
         "video tour",
+        "property tour",
+        "virtual video",
+        "listing video",
+        "tour video",
         "3d tour",
         "3-d tour",
-        "matterport",
-        "property tour",
     )
 
-    def valid_http_url(value: str) -> str:
+    def youtube_video_url(value: str) -> str:
+        """Return a canonical YouTube watch URL only when an actual video ID exists."""
         value = clean_text(value)
         if not value:
             return ""
-        url = urljoin(base_url, value)
+
+        # Decode escaped query separators sometimes found in embedded IDX data.
+        value = html_lib.unescape(value).replace("\\/", "/")
+        url = strip_fragment(urljoin(base_url, value))
         parsed = urlparse(url)
         if parsed.scheme not in ("http", "https") or not parsed.netloc:
             return ""
-        return strip_fragment(url)
 
-    # 1) Best source: an anchor explicitly labelled as a virtual/video/3D tour.
+        host = parsed.netloc.lower().split(":", 1)[0]
+        if host.startswith("www."):
+            host = host[4:]
+        if host.startswith("m."):
+            host = host[2:]
+
+        video_id = ""
+        path_parts = [part for part in parsed.path.split("/") if part]
+
+        if host == "youtu.be":
+            if path_parts:
+                video_id = path_parts[0]
+        elif host in ("youtube.com", "youtube-nocookie.com"):
+            if parsed.path.rstrip("/") == "/watch":
+                query = parse_qs(parsed.query)
+                video_id = (query.get("v") or [""])[0]
+            elif len(path_parts) >= 2 and path_parts[0].lower() in ("embed", "shorts", "live"):
+                video_id = path_parts[1]
+            else:
+                # Reject channel, user, playlist, results, homepage, etc.
+                return ""
+        else:
+            return ""
+
+        # Standard YouTube video IDs are 11 URL-safe characters.
+        if not re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id or ""):
+            return ""
+
+        return f"https://www.youtube.com/watch?v={video_id}"
+
+    # 1) Best source: a link explicitly labelled as the listing's virtual/video tour.
     for a in soup.find_all("a", href=True):
         label_parts = [
             a.get_text(" ", strip=True),
@@ -1164,34 +1199,36 @@ def extract_virtual_tour_url(soup: BeautifulSoup, raw_html: str, base_url: str) 
         ]
         label = clean_text(" ".join(str(x) for x in label_parts if x)).lower()
         if any(term in label for term in tour_terms):
-            candidate = valid_http_url(a.get("href", ""))
+            candidate = youtube_video_url(a.get("href", ""))
             if candidate:
                 return candidate
 
-    # 2) Explicit embedded data fields used by IDX/RESO-style pages.
     if raw_html:
         decoded = html_lib.unescape(raw_html)
+
+        # 2) Explicit virtual-tour/video data fields. The field must itself be
+        # tour-related; a random YouTube link elsewhere on the page is ignored.
         field_patterns = [
-            r'["\']?(?:VirtualTourURL|virtualTourURL|virtualTourUrl|UnbrandedVirtualTourURL|unbrandedVirtualTourUrl|VideoTourURL|videoTourUrl)["\']?\s*[:=]\s*["\']([^"\']+)["\']',
+            r'["\']?(?:VirtualTourURL|virtualTourURL|virtualTourUrl|UnbrandedVirtualTourURL|unbrandedVirtualTourUrl|VideoTourURL|videoTourURL|videoTourUrl)["\']?\s*[:=]\s*["\']([^"\']+)["\']',
             r'["\']?(?:VirtualTour|virtualTour|VideoTour|videoTour)["\']?\s*[:=]\s*["\'](https?://[^"\']+)["\']',
         ]
         for pattern in field_patterns:
             match = re.search(pattern, decoded, flags=re.I)
             if match:
-                candidate = valid_http_url(match.group(1))
+                candidate = youtube_video_url(match.group(1))
                 if candidate:
                     return candidate
 
-        # 3) HTML anchor whose visible markup identifies it as a tour, even if
-        # BeautifulSoup text extraction did not preserve the label cleanly.
+        # 3) Fallback for markup where the tour label is present but BeautifulSoup
+        # does not preserve it cleanly. Still requires an actual YouTube video URL.
         anchor_patterns = [
-            r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>.*?(?:virtual\s+tour|video\s+tour|3d\s+tour|3-d\s+tour|property\s+tour).*?</a>',
-            r'<a[^>]+(?:title|aria-label)=["\'][^"\']*(?:virtual\s+tour|video\s+tour|3d\s+tour|3-d\s+tour)[^"\']*["\'][^>]+href=["\']([^"\']+)["\']',
+            r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>.*?(?:virtual\s+tour|video\s+tour|property\s+tour|listing\s+video).*?</a>',
+            r'<a[^>]+(?:title|aria-label)=["\'][^"\']*(?:virtual\s+tour|video\s+tour|property\s+tour|listing\s+video)[^"\']*["\'][^>]+href=["\']([^"\']+)["\']',
         ]
         for pattern in anchor_patterns:
             match = re.search(pattern, decoded, flags=re.I | re.S)
             if match:
-                candidate = valid_http_url(match.group(1))
+                candidate = youtube_video_url(match.group(1))
                 if candidate:
                     return candidate
 

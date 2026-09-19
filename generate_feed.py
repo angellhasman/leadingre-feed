@@ -1124,6 +1124,79 @@ def extract_photo_urls(soup: BeautifulSoup, raw_html: str, base_url: str, listin
     return results[:150]
 
 
+
+def extract_virtual_tour_url(soup: BeautifulSoup, raw_html: str, base_url: str) -> str:
+    """
+    Extract one MLS-supplied listing virtual-tour/video URL when it is clearly
+    identified as a property tour on the MyRealPage detail page.
+
+    LeadingRE supports one Residential media record with category
+    "Unbranded Virtual Tour". We deliberately avoid generic YouTube/social
+    links and only accept links whose label/markup identifies them as a tour,
+    or explicit virtual-tour fields embedded in page data.
+    """
+    tour_terms = (
+        "virtual tour",
+        "video tour",
+        "3d tour",
+        "3-d tour",
+        "matterport",
+        "property tour",
+    )
+
+    def valid_http_url(value: str) -> str:
+        value = clean_text(value)
+        if not value:
+            return ""
+        url = urljoin(base_url, value)
+        parsed = urlparse(url)
+        if parsed.scheme not in ("http", "https") or not parsed.netloc:
+            return ""
+        return strip_fragment(url)
+
+    # 1) Best source: an anchor explicitly labelled as a virtual/video/3D tour.
+    for a in soup.find_all("a", href=True):
+        label_parts = [
+            a.get_text(" ", strip=True),
+            a.get("title", ""),
+            a.get("aria-label", ""),
+            a.get("data-title", ""),
+        ]
+        label = clean_text(" ".join(str(x) for x in label_parts if x)).lower()
+        if any(term in label for term in tour_terms):
+            candidate = valid_http_url(a.get("href", ""))
+            if candidate:
+                return candidate
+
+    # 2) Explicit embedded data fields used by IDX/RESO-style pages.
+    if raw_html:
+        decoded = html_lib.unescape(raw_html)
+        field_patterns = [
+            r'["\']?(?:VirtualTourURL|virtualTourURL|virtualTourUrl|UnbrandedVirtualTourURL|unbrandedVirtualTourUrl|VideoTourURL|videoTourUrl)["\']?\s*[:=]\s*["\']([^"\']+)["\']',
+            r'["\']?(?:VirtualTour|virtualTour|VideoTour|videoTour)["\']?\s*[:=]\s*["\'](https?://[^"\']+)["\']',
+        ]
+        for pattern in field_patterns:
+            match = re.search(pattern, decoded, flags=re.I)
+            if match:
+                candidate = valid_http_url(match.group(1))
+                if candidate:
+                    return candidate
+
+        # 3) HTML anchor whose visible markup identifies it as a tour, even if
+        # BeautifulSoup text extraction did not preserve the label cleanly.
+        anchor_patterns = [
+            r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>.*?(?:virtual\s+tour|video\s+tour|3d\s+tour|3-d\s+tour|property\s+tour).*?</a>',
+            r'<a[^>]+(?:title|aria-label)=["\'][^"\']*(?:virtual\s+tour|video\s+tour|3d\s+tour|3-d\s+tour)[^"\']*["\'][^>]+href=["\']([^"\']+)["\']',
+        ]
+        for pattern in anchor_patterns:
+            match = re.search(pattern, decoded, flags=re.I | re.S)
+            if match:
+                candidate = valid_http_url(match.group(1))
+                if candidate:
+                    return candidate
+
+    return ""
+
 def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str], list[str]]:
     soup, raw_html, final_url = fetch(url)
     lines = page_lines(soup)
@@ -1140,6 +1213,7 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     bathrooms_full, bathrooms_half, bathrooms_total, bathroom_source_url = get_bathroom_split_with_fallback(
         final_url, lines, text, raw_html
     )
+    virtual_tour_url = extract_virtual_tour_url(soup, raw_html, final_url)
 
     record = {
         "ListingKey": listing_key,
@@ -1162,6 +1236,7 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
         "BedroomsTotal": numeric_label(lines, ["Bedrooms", "Bedrooms Total"]),
         "BathroomsFull": bathrooms_full,
         "BathroomsHalf": bathrooms_half,
+        "VirtualTourURL": virtual_tour_url,
         "StandardStatus": extract_status(lines, text),
         "LivingArea": numeric_label(lines, ["Floor Area", "Floor Area Total", "Living Area"]),
         "LivingAreaUnits": "Square Feet",
@@ -1171,11 +1246,22 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     }
 
     # Apply manual overrides by MLS number, ListingKey, or internal MRP id.
+    # Bathroom overrides are used only as an MLS-verified fallback when the
+    # public MyRealPage detail page does not expose the Full/Half split.
+    applied_override_fields: set[str] = set()
     for key in [mls, listing_key, internal_id]:
         if key and isinstance(overrides.get(key), dict):
             for field, value in overrides[key].items():
                 if field in record:
                     record[field] = "" if value is None else str(value)
+                    applied_override_fields.add(field)
+
+    if {"BathroomsFull", "BathroomsHalf"}.issubset(applied_override_fields):
+        try:
+            bathrooms_total = str(int(record["BathroomsFull"]) + int(record["BathroomsHalf"]))
+            bathroom_source_url = "listing_overrides.json (MLS-verified fallback)"
+        except (TypeError, ValueError):
+            pass
 
     selected_member, agent_reason, agent_warning = choose_listing_member(
         record.get("City", ""),
@@ -1191,6 +1277,7 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
     record["_AgentAssignmentReason"] = agent_reason
     record["_BathroomsTotalSource"] = bathrooms_total
     record["_BathroomSourceURL"] = bathroom_source_url
+    record["_VirtualTourURL"] = record.get("VirtualTourURL", "")
 
     photos = extract_photo_urls(
         soup,
@@ -1378,6 +1465,19 @@ def build_xml(records: list[tuple[dict, list[str]]]) -> ET.ElementTree:
             add_text(media, "ResourceName", "Property")
             add_text(media, "ResourceRecordID", record["ListingKey"])
 
+        # LeadingRE supports one listing video/unbranded virtual tour per
+        # Residential property. Photo and tour ordering are independent, so
+        # the tour always uses Order=1.
+        tour_url = record.get("_VirtualTourURL", "")
+        if tour_url and record.get("PropertyType") == "Residential":
+            media = ET.SubElement(medias, "Media")
+            add_text(media, "MediaKey", f"{record['ListingKey']}-TOUR-1")
+            add_text(media, "Order", "1")
+            add_text(media, "MediaCategory", "Unbranded Virtual Tour")
+            add_text(media, "MediaURL", tour_url)
+            add_text(media, "ResourceName", "Property")
+            add_text(media, "ResourceRecordID", record["ListingKey"])
+
     ET.indent(root, space="  ")
     return ET.ElementTree(root)
 
@@ -1391,6 +1491,10 @@ def write_audit(
 ) -> None:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     total_photos = sum(len(photos) for _record, photos, _fatal, _warnings in results)
+    total_virtual_tours = sum(
+        1 for record, _photos, _fatal, _warnings in results
+        if record.get("_VirtualTourURL") and record.get("PropertyType") == "Residential"
+    )
     all_fatal = list(global_fatal)
     for record, _photos, fatal, _warnings in results:
         all_fatal.extend(f"{record.get('ListingId')}: {x}" for x in fatal)
@@ -1403,6 +1507,7 @@ def write_audit(
         f"Listings discovered: {len(discovered)}",
         f"Listings parsed: {len(results)}",
         f"Total photo URLs: {total_photos}",
+        f"Virtual tours: {total_virtual_tours}",
         f"Feed updated: {'YES' if feed_updated else 'NO'}",
         f"Fatal issues: {len(all_fatal)}",
         "",
@@ -1446,6 +1551,7 @@ def write_audit(
                 f"({record.get('BathroomsFull') or '[blank]'} full / "
                 f"{record.get('BathroomsHalf') or '[blank]'} half)",
                 f"   Bathroom source: {record.get('_BathroomSourceURL') or '[not found]'}",
+                f"   Virtual tour: {record.get('_VirtualTourURL') or '[none detected]'}",
                 f"   Living area: {record.get('LivingArea') or '[blank]'}",
                 f"   Photos: {len(photos)}",
                 f"   Fatal: {', '.join(fatal) if fatal else 'none'}",

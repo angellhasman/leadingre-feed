@@ -56,7 +56,7 @@ SESSION = requests.Session()
 SESSION.headers.update(
     {
         "User-Agent": (
-            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.5; "
+            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.6; "
             "+https://angellhasman.github.io/leadingre-feed/)"
         ),
         "Accept-Language": "en-CA,en;q=0.9",
@@ -787,9 +787,13 @@ def extract_bathroom_split(lines: list[str], text: str, raw_html: str = "") -> t
         total_raw, full, half = complete.groups()
         try:
             total_num = float(total_raw)
-            total = str(int(total_num)) if total_num.is_integer() else str(total_num)
+            # MyRealPage's aggregate total represents the number of bathroom rooms,
+            # so it should equal Full + Half. Reject internally inconsistent data.
+            if not total_num.is_integer() or int(total_num) != int(full) + int(half):
+                return "", "", ""
+            total = str(int(total_num))
         except ValueError:
-            total = total_raw
+            return "", "", ""
         return full, half, total
 
     # 2) Some layouts split the Full/Half part across DOM nodes.
@@ -809,9 +813,16 @@ def extract_bathroom_split(lines: list[str], text: str, raw_html: str = "") -> t
             total_raw = total_match.group(1)
             try:
                 total_num = float(total_raw)
-                total = str(int(total_num)) if total_num.is_integer() else str(total_num)
+                if total_num.is_integer() and int(total_num) == int(full) + int(half):
+                    total = str(int(total_num))
+                else:
+                    # The Full/Half pair is explicit, but the nearby total is
+                    # inconsistent; do not publish uncertain bathroom data.
+                    return "", "", ""
             except ValueError:
-                total = total_raw
+                return "", "", ""
+        else:
+            total = str(int(full) + int(half))
         return full, half, total
 
     # 3) Embedded data fallback: common JSON/RESO-style field names.
@@ -857,13 +868,27 @@ def extract_bathroom_split(lines: list[str], text: str, raw_html: str = "") -> t
                 pieces.append(int(normalized))
 
         if pieces:
-            full_count = sum(1 for value in pieces if value >= 3)
-            half_count = sum(1 for value in pieces if value == 2)
-            if full_count or half_count:
-                full = str(full_count)
-                half = str(half_count)
-                total = str(full_count + half_count)
-                return full, half, total
+            # A partial bathroom table can appear in some MyRealPage layouts.
+            # Never infer a split unless an independent bathroom-total value is
+            # present AND the number of table rows matches that total exactly.
+            total_match = re.search(
+                r"\bBathrooms?\s*:\s*(\d+(?:\.\d+)?)",
+                search_text,
+                flags=re.I,
+            )
+            if total_match:
+                try:
+                    total_num = float(total_match.group(1))
+                except ValueError:
+                    total_num = -1
+                if total_num.is_integer() and int(total_num) == len(pieces):
+                    full_count = sum(1 for value in pieces if value >= 3)
+                    half_count = sum(1 for value in pieces if value == 2)
+                    if full_count + half_count == len(pieces):
+                        full = str(full_count)
+                        half = str(half_count)
+                        total = str(len(pieces))
+                        return full, half, total
 
     return "", "", ""
 

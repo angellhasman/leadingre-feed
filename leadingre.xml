@@ -536,8 +536,8 @@
       <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3121000-2901-1408-robson-street-vancouver-west-v6g-1b9.108787673</ListingURL>
       <PublicRemarks>This Luxury Residence at Landmark on Robson sits 29 Floors above Downtown Vancouver with 270° city, ocean, and mountain views. Experience a sophisticated and luxurious lifestyle, designed by Ikebuchi Interior, boasting over 3,000 SQ. FT. of indoor-outdoor living from this four bedroom and four bathroom residence. Experience an impeccable choice of luxury features including custom feature wood walls and closets, integrated cove lighting, Gaggenau Appliances (3 Refrigerators), motorized blinds and a expansive Primary Suite with dual closets and spa like ensuite. Club Robson offers over 18,000 SQ. Ft. of amenities that are highlighted by an ozone pool, fitness and yoga room, and 24HR concierge. This residence also offers two private double car garages and two private storage lockers.</PublicRemarks>
       <BedroomsTotal>4</BedroomsTotal>
-      <BathroomsFull>1</BathroomsFull>
-      <BathroomsHalf>0</BathroomsHalf>
+      <BathroomsFull />
+      <BathroomsHalf />
       <StandardStatus>Active</StandardStatus>
       <LivingArea>2769</LivingArea>
       <LivingAreaUnits>Square Feet</LivingAreaUnits>

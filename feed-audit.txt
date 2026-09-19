@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-19 05:12:47 UTC
+Generated: 2026-09-19 05:20:44 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -347,12 +347,13 @@ Address: 2901 1408 Robson Street, Vancouver V6G 1B9
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 4
-   Bathrooms: 1 total (1 full / 0 half)
-   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3121000-2901-1408-robson-street-vancouver-west-v6g-1b9.108787673
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 2769
    Photos: 41
    Fatal: none
    Warnings:
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 19. R3084509
    ListingKey: MRP-107408263

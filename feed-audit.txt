@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-19 05:01:01 UTC
+Generated: 2026-09-19 05:12:47 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -24,6 +24,8 @@ Address:  , West Vancouver
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 5
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 9944
    Photos: 33
    Fatal: none
@@ -31,7 +33,7 @@ Address:  , West Vancouver
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
      - postal code unavailable
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 2. R3147443
    ListingKey: MRP-107402276
@@ -44,13 +46,15 @@ Address:  , West Vancouver V7V 1E4
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 4
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 9863
    Photos: 27
    Fatal: none
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 3. R3061998
    ListingKey: MRP-107401309
@@ -63,13 +67,15 @@ Address:  , White Rock V4B 2B3
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 6
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 11811
    Photos: 33
    Fatal: none
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 4. R3058864
    ListingKey: MRP-107402198
@@ -82,11 +88,13 @@ Address: 961 King Georges Way, West Vancouver V7S 1S6
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 7
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 11279
    Photos: 31
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 5. R3136700
    ListingKey: MRP-109085993
@@ -99,13 +107,15 @@ Address:  , West Vancouver V7S 3K3
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 5
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 9549
    Photos: 40
    Fatal: none
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 6. R3126771
    ListingKey: MRP-108787675
@@ -118,11 +128,13 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 6
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 7241
    Photos: 72
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 7. R3158164
    ListingKey: MRP-109623812
@@ -135,11 +147,12 @@ Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by Angell, Hasman & Associates (Malcolm Hasman) Realty Ltd.
    Bedrooms: 3
+   Bathrooms: 5 total (4 full / 1 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3158164-ph2-1568-alberni-street-vancouver-v6g-2z6.109623812
    Living area: 4502
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 8. R3158469
    ListingKey: MRP-109628086
@@ -152,11 +165,12 @@ Address: 3612 Marine Drive, West Vancouver V7V 1N4
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by Angell, Hasman & Associates (Malcolm Hasman) Realty Ltd.
    Bedrooms: [blank]
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: [blank]
    Photos: 13
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 9. R3154478
    ListingKey: MRP-109620749
@@ -169,11 +183,13 @@ Address: 3820 Sunridge Drive, Whistler V8E 0W1
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 6
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 6345
    Photos: 36
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 10. 10394077
    ListingKey: MRP-109805863
@@ -186,11 +202,13 @@ Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
    Agent assignment: Kelowna override
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 5
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 10568
    Photos: 43
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 11. R3154347
    ListingKey: MRP-109519394
@@ -203,11 +221,12 @@ Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
    Bedrooms: 5
+   Bathrooms: 8 total (7 full / 1 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3154347-690-knockmaroon-road-west-vancouver-v7s-1r6.109519394
    Living area: 10343
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 12. R3116508
    ListingKey: MRP-108596080
@@ -220,11 +239,12 @@ Address: 3803 Sunridge Place, Whistler V0N 1B3
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 6
+   Bathrooms: 10 total (8 full / 2 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3116508-3803-sunridge-place-whistler-v0n-1b3.108596080
    Living area: 7442
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 13. R3160234
    ListingKey: MRP-109679749
@@ -237,11 +257,12 @@ Address: 450 Macbeth Crescent, West Vancouver V7T 1V7
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
    Bedrooms: 6
+   Bathrooms: 8 total (7 full / 1 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3160234-450-macbeth-crescent-west-vancouver-v7t-1v7.109679749
    Living area: 10691
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 14. R3136223
    ListingKey: MRP-109061930
@@ -254,11 +275,12 @@ Address: 6693 Tapley Place, Whistler V6E 0C5
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 5
+   Bathrooms: 6 total (4 full / 2 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3136223-6693-tapley-place-whistler-v6e-0c5.109061930
    Living area: 5907
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 15. R3141069
    ListingKey: MRP-109180105
@@ -271,11 +293,12 @@ Address: 3205 Archibald Way, Whistler V8E 0B8
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 6
+   Bathrooms: 8 total (7 full / 1 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3141069-3205-archibald-way-whistler-v8e-0b8.109180105
    Living area: 6367
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 16. R3111973
    ListingKey: MRP-108488999
@@ -288,11 +311,12 @@ Address: 7313 Toni Sailer Lane, Whistler V8E 0E3
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 4
+   Bathrooms: 6 total (4 full / 2 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3111973-7313-toni-sailer-lane-whistler-v8e-0e3.108488999
    Living area: 3577
    Photos: 30
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 17. R3156574
    ListingKey: MRP-109575499
@@ -305,11 +329,12 @@ Address: 2955 Rosebery Avenue, West Vancouver V7V 3A5
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
    Bedrooms: 5
+   Bathrooms: 7 total (6 full / 1 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3156574-2955-rosebery-avenue-west-vancouver-v7v-3a5.109575499
    Living area: 6884
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 18. R3121000
    ListingKey: MRP-108787673
@@ -322,11 +347,12 @@ Address: 2901 1408 Robson Street, Vancouver V6G 1B9
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 4
+   Bathrooms: 1 total (1 full / 0 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3121000-2901-1408-robson-street-vancouver-west-v6g-1b9.108787673
    Living area: 2769
    Photos: 41
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 19. R3084509
    ListingKey: MRP-107408263
@@ -339,11 +365,13 @@ Address: 5871 Sunshine Coast Highway, Sechelt V0N 3A0
    Agent assignment: office/reciprocity brokerage disclosure
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 5
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 7176
    Photos: 35
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 20. 10389176
    ListingKey: MRP-109806075
@@ -356,8 +384,10 @@ Address: 19 180 Sheerwater Court, Kelowna V1V 2X1
    Agent assignment: Kelowna override
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 4
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
    Living area: 11663
    Photos: 38
    Fatal: none
    Warnings:
-     - full/half bathroom split not yet available; both Recommended fields are sent blank
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing

@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-18 07:34:53 UTC
+Generated: 2026-09-19 04:48:23 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -20,6 +20,9 @@ Address:  , West Vancouver
    Price: 58800000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 5
    Living area: 9944
    Photos: 33
@@ -28,7 +31,6 @@ Address:  , West Vancouver
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
      - postal code unavailable
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 2. R3147443
@@ -38,6 +40,9 @@ Address:  , West Vancouver V7V 1E4
    Price: 39980000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 4
    Living area: 9863
    Photos: 27
@@ -45,7 +50,6 @@ Address:  , West Vancouver V7V 1E4
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 3. R3061998
@@ -55,6 +59,9 @@ Address:  , White Rock V4B 2B3
    Price: 32500000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 6
    Living area: 11811
    Photos: 33
@@ -62,7 +69,6 @@ Address:  , White Rock V4B 2B3
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 4. R3058864
@@ -72,12 +78,14 @@ Address: 961 King Georges Way, West Vancouver V7S 1S6
    Price: 29800000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 7
    Living area: 11279
    Photos: 31
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 5. R3136700
@@ -87,6 +95,9 @@ Address:  , West Vancouver V7S 3K3
    Price: 23750000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 5
    Living area: 9549
    Photos: 40
@@ -94,7 +105,6 @@ Address:  , West Vancouver V7S 3K3
    Warnings:
      - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
      - street address not fully available
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 6. R3126771
@@ -104,12 +114,14 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Price: 16995000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 6
    Living area: 7241
    Photos: 72
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 7. R3158164
@@ -119,12 +131,14 @@ Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
    Price: 16800000
    Status: Active
    Type: Residential / Condominium
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by Angell, Hasman & Associates (Malcolm Hasman) Realty Ltd.
    Bedrooms: 3
    Living area: 4502
    Photos: 40
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 8. R3158469
@@ -134,12 +148,14 @@ Address: 3612 Marine Drive, West Vancouver V7V 1N4
    Price: 16800000
    Status: Active
    Type: Land / Land
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by Angell, Hasman & Associates (Malcolm Hasman) Realty Ltd.
    Bedrooms: [blank]
    Living area: [blank]
    Photos: 13
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 9. R3154478
@@ -149,12 +165,14 @@ Address: 3820 Sunridge Drive, Whistler V8E 0W1
    Price: 15800000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 6
    Living area: 6345
    Photos: 36
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 10. 10394077
@@ -164,12 +182,14 @@ Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
    Price: 13450000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: Kelowna override
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 5
    Living area: 10568
    Photos: 43
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 11. R3154347
@@ -179,12 +199,14 @@ Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
    Price: 12888000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
    Bedrooms: 5
    Living area: 10343
    Photos: 40
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 12. R3116508
@@ -194,12 +216,14 @@ Address: 3803 Sunridge Place, Whistler V0N 1B3
    Price: 11200000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 6
    Living area: 7442
    Photos: 40
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 13. R3160234
@@ -209,12 +233,14 @@ Address: 450 Macbeth Crescent, West Vancouver V7T 1V7
    Price: 9688000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
    Bedrooms: 6
    Living area: 10691
    Photos: 40
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 14. R3136223
@@ -224,12 +250,14 @@ Address: 6693 Tapley Place, Whistler V6E 0C5
    Price: 9999999
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 5
    Living area: 5907
    Photos: 40
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 15. R3141069
@@ -239,12 +267,14 @@ Address: 3205 Archibald Way, Whistler V8E 0B8
    Price: 8950000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 6
    Living area: 6367
    Photos: 40
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 16. R3111973
@@ -254,12 +284,14 @@ Address: 7313 Toni Sailer Lane, Whistler V8E 0E3
    Price: 9500000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
    Bedrooms: 4
    Living area: 3577
    Photos: 30
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 17. R3156574
@@ -269,12 +301,14 @@ Address: 2955 Rosebery Avenue, West Vancouver V7V 3A5
    Price: 9288000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
    Bedrooms: 5
    Living area: 6884
    Photos: 40
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 18. R3121000
@@ -284,12 +318,14 @@ Address: 2901 1408 Robson Street, Vancouver V6G 1B9
    Price: 6880000
    Status: Active
    Type: Residential / Condominium
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 4
    Living area: 2769
    Photos: 41
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 19. R3084509
@@ -299,12 +335,14 @@ Address: 5871 Sunshine Coast Highway, Sechelt V0N 3A0
    Price: 6880000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 5
    Living area: 7176
    Photos: 35
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank
 
 20. 10389176
@@ -314,10 +352,12 @@ Address: 19 180 Sheerwater Court, Kelowna V1V 2X1
    Price: 9900000
    Status: Active
    Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: Kelowna override
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 4
    Living area: 11663
    Photos: 38
    Fatal: none
    Warnings:
-     - individual listing-agent attribution not yet enabled; using general Angell Hasman Member record
      - full/half bathroom split not yet available; both Recommended fields are sent blank

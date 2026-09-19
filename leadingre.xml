@@ -21,11 +21,23 @@
       <MemberKey>ANGELL-HASMAN-LISTINGS</MemberKey>
       <OfficeKey>ANGELL-HASMAN-WV</OfficeKey>
       <MemberMlsId>ANGELL-HASMAN-LISTINGS</MemberMlsId>
-      <MemberLastName>Listings</MemberLastName>
-      <MemberFirstName>Angell Hasman</MemberFirstName>
+      <MemberLastName>Hasman</MemberLastName>
+      <MemberFirstName>Angell</MemberFirstName>
       <MemberStatus>Active</MemberStatus>
       <MemberMobilePhone />
+      <MemberOfficePhone>604-921-1188</MemberOfficePhone>
       <MemberEmail>info@angellhasman.ca</MemberEmail>
+    </Member>
+    <Member>
+      <MemberKey>MALCOLM-HASMAN</MemberKey>
+      <OfficeKey>ANGELL-HASMAN-WV</OfficeKey>
+      <MemberMlsId>MALCOLM-HASMAN</MemberMlsId>
+      <MemberLastName>Hasman</MemberLastName>
+      <MemberFirstName>Malcolm</MemberFirstName>
+      <MemberStatus>Active</MemberStatus>
+      <MemberMobilePhone>604-290-1679</MemberMobilePhone>
+      <MemberOfficePhone />
+      <MemberEmail>malcolm@malcolmhasman.com</MemberEmail>
     </Member>
   </Members>
   <Properties>
@@ -143,7 +155,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-109085993</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3136700</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -171,7 +183,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-108787675</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3126771</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -199,7 +211,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-109623812</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3158164</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -227,7 +239,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-109628086</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3158469</ListingId>
       <PropertyType>Land</PropertyType>
@@ -255,7 +267,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-109620749</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3154478</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -507,7 +519,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-108787673</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3121000</ListingId>
       <PropertyType>Residential</PropertyType>

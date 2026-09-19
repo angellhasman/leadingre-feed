@@ -7,18 +7,22 @@ This version automatically:
 2. Follows pagination (Page 1, Page 2, etc.).
 3. Finds up to 20 listing-detail URLs.
 4. Opens each listing and extracts current public listing data and photo URLs.
-5. Writes feed-audit.txt so missing/uncertain fields are easy to review.
-6. Rebuilds leadingre.xml only when required fields and key safety checks pass.
+5. Uses the public "Listed by" brokerage disclosure to distinguish Malcolm/Max
+   inventory from office reciprocity inventory.
+6. Writes feed-audit.txt so missing/uncertain fields are easy to review.
+7. Rebuilds leadingre.xml only when required fields and key safety checks pass.
 
 The listing-set page remains the "control panel":
 add/remove a listing there, and the nightly feed follows it automatically.
 
 IMPORTANT:
-- A listing with "Address on Request" is allowed to stay in the feed, but the audit
-  will flag it so the true address can later be added as a private override if desired.
-- Individual agent attribution is intentionally deferred. LeadingRE permits a general
-  Member record representing the company/listing team. We can switch to individual
-  agents after the automated 20-listing feed is proven.
+- A listing with "Address on Request" is allowed to stay in the feed.
+- Agent attribution is conservative:
+    * Listings whose public brokerage disclosure contains "(Malcolm Hasman)"
+      are assigned to Malcolm Hasman.
+    * Kelowna listings are always assigned to the Angell Hasman general Member.
+    * All other listings default to the Angell Hasman general Member.
+  Any unrecognized brokerage disclosure is flagged in feed-audit.txt.
 """
 
 from __future__ import annotations
@@ -51,7 +55,7 @@ SESSION = requests.Session()
 SESSION.headers.update(
     {
         "User-Agent": (
-            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.1; "
+            "Mozilla/5.0 (compatible; AngellHasman-LeadingREFeed/5.3; "
             "+https://angellhasman.github.io/leadingre-feed/)"
         ),
         "Accept-Language": "en-CA,en;q=0.9",
@@ -73,17 +77,36 @@ OFFICE = {
     "OfficeMlsId": "V002321",
 }
 
-# LeadingRE permits one general Member record representing the company/listing team.
-GENERAL_MEMBER = {
+# Two stable LeadingRE Member records:
+# - Malcolm Hasman for Malcolm/Max inventory.
+# - Angell Hasman for office reciprocity inventory and Kelowna listings.
+#
+# Keep MemberKey values stable between nightly deliveries.
+ANGELL_MEMBER = {
     "MemberKey": "ANGELL-HASMAN-LISTINGS",
     "OfficeKey": OFFICE["OfficeKey"],
     "MemberMlsId": "ANGELL-HASMAN-LISTINGS",
-    "MemberLastName": "Listings",
-    "MemberFirstName": "Angell Hasman",
+    "MemberLastName": "Hasman",
+    "MemberFirstName": "Angell",
     "MemberStatus": "Active",
     "MemberMobilePhone": "",
+    "MemberOfficePhone": "604-921-1188",
     "MemberEmail": "info@angellhasman.ca",
 }
+
+MALCOLM_MEMBER = {
+    "MemberKey": "MALCOLM-HASMAN",
+    "OfficeKey": OFFICE["OfficeKey"],
+    "MemberMlsId": "MALCOLM-HASMAN",
+    "MemberLastName": "Hasman",
+    "MemberFirstName": "Malcolm",
+    "MemberStatus": "Active",
+    "MemberMobilePhone": "604-290-1679",
+    "MemberOfficePhone": "",
+    "MemberEmail": "malcolm@malcolmhasman.com",
+}
+
+MEMBERS = [ANGELL_MEMBER, MALCOLM_MEMBER]
 
 KNOWN_BC_CITIES = [
     "West Vancouver",
@@ -148,6 +171,76 @@ def page_lines(soup: BeautifulSoup) -> list[str]:
 
 def page_text(soup: BeautifulSoup) -> str:
     return "\n".join(page_lines(soup))
+
+
+def extract_listing_brokerage_disclosure(lines: list[str], text: str) -> str:
+    """
+    Return the public MyRealPage "Listed by ..." disclosure when present.
+
+    MyRealPage usually renders it on one line, but this also handles a layout where
+    "Listed by" and the brokerage name are split across adjacent text lines.
+    """
+    for i, line in enumerate(lines):
+        low = clean_text(line).lower()
+        if not low.startswith("listed by"):
+            continue
+
+        current = clean_text(line)
+        remainder = re.sub(r"^listed\s+by\s*:?-?\s*", "", current, flags=re.I).strip()
+        if remainder:
+            return f"Listed by {remainder}"
+
+        # Fallback for a split line: "Listed by" followed by the brokerage.
+        for j in range(i + 1, min(i + 4, len(lines))):
+            candidate = clean_text(lines[j])
+            if candidate:
+                return f"Listed by {candidate}"
+
+    # Last-resort search in the page text. Keep only the current line.
+    match = re.search(r"(?im)^\s*Listed\s+by\s*:?-?\s*(.+?)\s*$", text)
+    if match:
+        return f"Listed by {clean_text(match.group(1))}"
+
+    return ""
+
+
+def choose_listing_member(city: str, brokerage_disclosure: str) -> tuple[dict, str, str]:
+    """
+    Decide which LeadingRE Member record owns a listing.
+
+    Returns: (member_record, audit_reason, warning)
+    """
+    city_l = clean_text(city).lower()
+    disclosure = clean_text(brokerage_disclosure)
+    disclosure_l = disclosure.lower()
+
+    # User-directed business rule: all Kelowna inventory uses the general
+    # Angell Hasman contact, even if the source disclosure changes.
+    if city_l == "kelowna":
+        return ANGELL_MEMBER, "Kelowna override", ""
+
+    # Malcolm/Max listings use the legal brokerage disclosure containing
+    # "(Malcolm Hasman)" on MyRealPage.
+    if "(malcolm hasman)" in disclosure_l:
+        return MALCOLM_MEMBER, 'brokerage disclosure contains "(Malcolm Hasman)"', ""
+
+    # Recognized office reciprocity disclosure.
+    if "angell" in disclosure_l and "hasman" in disclosure_l:
+        return ANGELL_MEMBER, "office/reciprocity brokerage disclosure", ""
+
+    # Conservative fallback: never attribute an uncertain listing to Malcolm.
+    if not disclosure:
+        warning = (
+            "no public 'Listed by' brokerage disclosure found; "
+            "defaulted agent attribution to Angell Hasman"
+        )
+    else:
+        warning = (
+            f"unrecognized brokerage disclosure {disclosure!r}; "
+            "defaulted agent attribution to Angell Hasman"
+        )
+
+    return ANGELL_MEMBER, "conservative fallback", warning
 
 
 def load_overrides() -> dict:
@@ -856,10 +949,11 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
 
     address = extract_address(final_url, soup, text)
     property_type, subtype = map_property_type(lines, soup, final_url)
+    brokerage_disclosure = extract_listing_brokerage_disclosure(lines, text)
 
     record = {
         "ListingKey": listing_key,
-        "ListAgentKey": GENERAL_MEMBER["MemberKey"],
+        "ListAgentKey": ANGELL_MEMBER["MemberKey"],
         "ListOfficeKey": OFFICE["OfficeKey"],
         "ListingId": mls or listing_key,
         "PropertyType": property_type,
@@ -892,6 +986,19 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
             for field, value in overrides[key].items():
                 if field in record:
                     record[field] = "" if value is None else str(value)
+
+    selected_member, agent_reason, agent_warning = choose_listing_member(
+        record.get("City", ""),
+        brokerage_disclosure,
+    )
+    record["ListAgentKey"] = selected_member["MemberKey"]
+
+    # Internal audit-only fields. They are not written to the XML.
+    record["_ListingAgentName"] = (
+        f"{selected_member['MemberFirstName']} {selected_member['MemberLastName']}"
+    ).strip()
+    record["_BrokerageDisclosure"] = brokerage_disclosure
+    record["_AgentAssignmentReason"] = agent_reason
 
     photos = extract_photo_urls(
         soup,
@@ -978,7 +1085,8 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
         warnings.append("bedroom count unavailable")
     if not record["LivingArea"] and record["PropertyType"] == "Residential":
         warnings.append("living area unavailable")
-    warnings.append("individual listing-agent attribution not yet enabled; using general Angell Hasman Member record")
+    if agent_warning:
+        warnings.append(agent_warning)
     warnings.append("full/half bathroom split not yet available; both Recommended fields are sent blank")
     if len(photos) >= 150:
         warnings.append("photo extractor reached its 150-photo safety cap; review for duplicates")
@@ -1007,12 +1115,14 @@ def build_xml(records: list[tuple[dict, list[str]]]) -> ET.ElementTree:
         add_text(office, key, OFFICE.get(key, ""))
 
     members = ET.SubElement(root, "Members")
-    member = ET.SubElement(members, "Member")
-    for key in [
-        "MemberKey", "OfficeKey", "MemberMlsId", "MemberLastName",
-        "MemberFirstName", "MemberStatus", "MemberMobilePhone", "MemberEmail",
-    ]:
-        add_text(member, key, GENERAL_MEMBER.get(key, ""))
+    for member_data in MEMBERS:
+        member = ET.SubElement(members, "Member")
+        for key in [
+            "MemberKey", "OfficeKey", "MemberMlsId", "MemberLastName",
+            "MemberFirstName", "MemberStatus", "MemberMobilePhone",
+            "MemberOfficePhone", "MemberEmail",
+        ]:
+            add_text(member, key, member_data.get(key, ""))
 
     properties = ET.SubElement(root, "Properties")
     for record, _photos in records:
@@ -1119,6 +1229,9 @@ def write_audit(
                 f"   Price: {record.get('ListPrice')}",
                 f"   Status: {record.get('StandardStatus')}",
                 f"   Type: {record.get('PropertyType')} / {record.get('PropertySubType')}",
+                f"   Listing agent: {record.get('_ListingAgentName') or '[blank]'}",
+                f"   Agent assignment: {record.get('_AgentAssignmentReason') or '[blank]'}",
+                f"   Brokerage disclosure: {record.get('_BrokerageDisclosure') or '[not found]'}",
                 f"   Bedrooms: {record.get('BedroomsTotal') or '[blank]'}",
                 f"   Living area: {record.get('LivingArea') or '[blank]'}",
                 f"   Photos: {len(photos)}",

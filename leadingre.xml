@@ -868,6 +868,14 @@
       <ResourceRecordID>MRP-107402265</ResourceRecordID>
     </Media>
     <Media>
+      <MediaKey>MRP-107402265-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=Id3Bo1rs0lo</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-107402265</ResourceRecordID>
+    </Media>
+    <Media>
       <MediaKey>MRP-107402276-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -1080,6 +1088,14 @@
       <Order>27</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/6/7/2/107402276/bd3fca1b28de69071e2705936a1f5ddd.jpg</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-107402276</ResourceRecordID>
+    </Media>
+    <Media>
+      <MediaKey>MRP-107402276-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=34NpHb4rpxo</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-107402276</ResourceRecordID>
     </Media>
@@ -1348,6 +1364,14 @@
       <ResourceRecordID>MRP-107401309</ResourceRecordID>
     </Media>
     <Media>
+      <MediaKey>MRP-107401309-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=ZZb3_a5tIbo</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-107401309</ResourceRecordID>
+    </Media>
+    <Media>
       <MediaKey>MRP-107402198-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -1592,6 +1616,14 @@
       <Order>31</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/8/9/1/107402198/9bd00222f5b9d76d310586d70911a1b3.jpg</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-107402198</ResourceRecordID>
+    </Media>
+    <Media>
+      <MediaKey>MRP-107402198-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=ihP1C2ejxVs</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-107402198</ResourceRecordID>
     </Media>
@@ -1912,6 +1944,14 @@
       <Order>40</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/3/9/9/109085993/8d27ed9619022eb7e940a3ff8b55c438.jpg</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-109085993</ResourceRecordID>
+    </Media>
+    <Media>
+      <MediaKey>MRP-109085993-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=9KRqCPvYj90</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109085993</ResourceRecordID>
     </Media>
@@ -2492,6 +2532,14 @@
       <ResourceRecordID>MRP-108787675</ResourceRecordID>
     </Media>
     <Media>
+      <MediaKey>MRP-108787675-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=AnR31I9qGxs</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-108787675</ResourceRecordID>
+    </Media>
+    <Media>
       <MediaKey>MRP-109623812-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -2808,6 +2856,14 @@
       <Order>40</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/2/1/8/109623812/8da216a59d942c5bb9c3f5ca7d9947b0.jpeg</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-109623812</ResourceRecordID>
+    </Media>
+    <Media>
+      <MediaKey>MRP-109623812-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=ixCPXunj_F4</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109623812</ResourceRecordID>
     </Media>
@@ -3200,6 +3256,14 @@
       <Order>36</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/9/4/7/109620749/4a12b4a677b567f59e7d57d1bd5346e5.jpg</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-109620749</ResourceRecordID>
+    </Media>
+    <Media>
+      <MediaKey>MRP-109620749-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=fplCpJhieXY</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109620749</ResourceRecordID>
     </Media>
@@ -3868,6 +3932,14 @@
       <ResourceRecordID>MRP-109519394</ResourceRecordID>
     </Media>
     <Media>
+      <MediaKey>MRP-109519394-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=yaPOtT8ry1o</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-109519394</ResourceRecordID>
+    </Media>
+    <Media>
       <MediaKey>MRP-108596080-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -4508,6 +4580,14 @@
       <ResourceRecordID>MRP-109679749</ResourceRecordID>
     </Media>
     <Media>
+      <MediaKey>MRP-109679749-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=NCPcQKhrSQM</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-109679749</ResourceRecordID>
+    </Media>
+    <Media>
       <MediaKey>MRP-109061930-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -4824,6 +4904,14 @@
       <Order>40</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/0/3/9/109061930/164b06d3fdcf5bee026c06d7771fa126.jpeg</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-109061930</ResourceRecordID>
+    </Media>
+    <Media>
+      <MediaKey>MRP-109061930-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=JwfOcdWEyyw</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109061930</ResourceRecordID>
     </Media>
@@ -6036,6 +6124,14 @@
       <ResourceRecordID>MRP-108787673</ResourceRecordID>
     </Media>
     <Media>
+      <MediaKey>MRP-108787673-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=3kCi7mhVke0</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-108787673</ResourceRecordID>
+    </Media>
+    <Media>
       <MediaKey>MRP-107408263-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -6312,6 +6408,14 @@
       <Order>35</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/3/6/2/107408263/2597a4a61684497ec7571317e1683298.jpg</MediaURL>
+      <ResourceName>Property</ResourceName>
+      <ResourceRecordID>MRP-107408263</ResourceRecordID>
+    </Media>
+    <Media>
+      <MediaKey>MRP-107408263-TOUR-1</MediaKey>
+      <Order>1</Order>
+      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
+      <MediaURL>https://www.youtube.com/watch?v=G0PLo0NoYAE</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-107408263</ResourceRecordID>
     </Media>

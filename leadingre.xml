@@ -868,14 +868,6 @@
       <ResourceRecordID>MRP-107402265</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-107402265-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-107402265</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-107402276-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -1088,14 +1080,6 @@
       <Order>27</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/6/7/2/107402276/bd3fca1b28de69071e2705936a1f5ddd.jpg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-107402276</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-107402276-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-107402276</ResourceRecordID>
     </Media>
@@ -1364,14 +1348,6 @@
       <ResourceRecordID>MRP-107401309</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-107401309-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-107401309</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-107402198-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -1616,14 +1592,6 @@
       <Order>31</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/8/9/1/107402198/9bd00222f5b9d76d310586d70911a1b3.jpg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-107402198</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-107402198-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-107402198</ResourceRecordID>
     </Media>
@@ -1944,14 +1912,6 @@
       <Order>40</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/3/9/9/109085993/8d27ed9619022eb7e940a3ff8b55c438.jpg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109085993</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-109085993-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109085993</ResourceRecordID>
     </Media>
@@ -2532,14 +2492,6 @@
       <ResourceRecordID>MRP-108787675</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-108787675-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-108787675</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-109623812-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -2856,14 +2808,6 @@
       <Order>40</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/2/1/8/109623812/8da216a59d942c5bb9c3f5ca7d9947b0.jpeg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109623812</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-109623812-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109623812</ResourceRecordID>
     </Media>
@@ -3260,14 +3204,6 @@
       <ResourceRecordID>MRP-109620749</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-109620749-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109620749</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-109805863-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -3612,14 +3548,6 @@
       <ResourceRecordID>MRP-109805863</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-109805863-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109805863</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-109519394-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -3936,14 +3864,6 @@
       <Order>40</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/4/9/3/109519394/314b7e5b1a83c5ba3be75b934436b7f0.jpeg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109519394</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-109519394-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109519394</ResourceRecordID>
     </Media>
@@ -4588,14 +4508,6 @@
       <ResourceRecordID>MRP-109679749</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-109679749-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109679749</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-109061930-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -4916,14 +4828,6 @@
       <ResourceRecordID>MRP-109061930</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-109061930-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109061930</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-109180105-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -5240,14 +5144,6 @@
       <Order>40</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/5/0/1/109180105/b2f450eb471228f0b6f563cb11cd0129.jpeg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109180105</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-109180105-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109180105</ResourceRecordID>
     </Media>
@@ -6140,14 +6036,6 @@
       <ResourceRecordID>MRP-108787673</ResourceRecordID>
     </Media>
     <Media>
-      <MediaKey>MRP-108787673-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-108787673</ResourceRecordID>
-    </Media>
-    <Media>
       <MediaKey>MRP-107408263-PHOTO-1</MediaKey>
       <Order>1</Order>
       <MediaCategory>Photo</MediaCategory>
@@ -6424,14 +6312,6 @@
       <Order>35</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/3/6/2/107408263/2597a4a61684497ec7571317e1683298.jpg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-107408263</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-107408263-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-107408263</ResourceRecordID>
     </Media>
@@ -6736,14 +6616,6 @@
       <Order>38</Order>
       <MediaCategory>Photo</MediaCategory>
       <MediaURL>https://s3.amazonaws.com/mrp-listings/5/7/0/109806075/b5cbfb8970b4ae4a5c2b54fc61d9ce9d.jpg</MediaURL>
-      <ResourceName>Property</ResourceName>
-      <ResourceRecordID>MRP-109806075</ResourceRecordID>
-    </Media>
-    <Media>
-      <MediaKey>MRP-109806075-TOUR-1</MediaKey>
-      <Order>1</Order>
-      <MediaCategory>Unbranded Virtual Tour</MediaCategory>
-      <MediaURL>https://maxhasman.ca/</MediaURL>
       <ResourceName>Property</ResourceName>
       <ResourceRecordID>MRP-109806075</ResourceRecordID>
     </Media>

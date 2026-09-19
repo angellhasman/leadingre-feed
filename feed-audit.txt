@@ -1,11 +1,11 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-19 05:36:26 UTC
+Generated: 2026-09-19 05:42:59 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
 Listings parsed: 20
 Total photo URLs: 752
-Virtual tours: 16
+Virtual tours: 0
 Feed updated: YES
 Fatal issues: 0
 
@@ -27,7 +27,7 @@ Address:  , West Vancouver
    Bedrooms: 5
    Bathrooms: 7 total (5 full / 2 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 9944
    Photos: 33
    Fatal: none
@@ -49,7 +49,7 @@ Address:  , West Vancouver V7V 1E4
    Bedrooms: 4
    Bathrooms: 6 total (5 full / 1 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 9863
    Photos: 27
    Fatal: none
@@ -70,7 +70,7 @@ Address:  , White Rock V4B 2B3
    Bedrooms: 6
    Bathrooms: 8 total (6 full / 2 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 11811
    Photos: 33
    Fatal: none
@@ -91,7 +91,7 @@ Address: 961 King Georges Way, West Vancouver V7S 1S6
    Bedrooms: 7
    Bathrooms: 9 total (8 full / 1 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 11279
    Photos: 31
    Fatal: none
@@ -110,7 +110,7 @@ Address:  , West Vancouver V7S 3K3
    Bedrooms: 5
    Bathrooms: 8 total (5 full / 3 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 9549
    Photos: 40
    Fatal: none
@@ -131,7 +131,7 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Bedrooms: 6
    Bathrooms: 7 total (7 full / 0 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 7241
    Photos: 72
    Fatal: none
@@ -150,7 +150,7 @@ Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
    Bedrooms: 3
    Bathrooms: 5 total (4 full / 1 half)
    Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3158164-ph2-1568-alberni-street-vancouver-v6g-2z6.109623812
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 4502
    Photos: 40
    Fatal: none
@@ -188,7 +188,7 @@ Address: 3820 Sunridge Drive, Whistler V8E 0W1
    Bedrooms: 6
    Bathrooms: 7 total (5 full / 2 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 6345
    Photos: 36
    Fatal: none
@@ -207,7 +207,7 @@ Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
    Bedrooms: 5
    Bathrooms: 7 total (6 full / 1 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 10568
    Photos: 43
    Fatal: none
@@ -226,7 +226,7 @@ Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
    Bedrooms: 5
    Bathrooms: 8 total (7 full / 1 half)
    Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3154347-690-knockmaroon-road-west-vancouver-v7s-1r6.109519394
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 10343
    Photos: 40
    Fatal: none
@@ -264,7 +264,7 @@ Address: 450 Macbeth Crescent, West Vancouver V7T 1V7
    Bedrooms: 6
    Bathrooms: 8 total (7 full / 1 half)
    Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3160234-450-macbeth-crescent-west-vancouver-v7t-1v7.109679749
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 10691
    Photos: 40
    Fatal: none
@@ -283,7 +283,7 @@ Address: 6693 Tapley Place, Whistler V6E 0C5
    Bedrooms: 5
    Bathrooms: 6 total (4 full / 2 half)
    Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3136223-6693-tapley-place-whistler-v6e-0c5.109061930
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 5907
    Photos: 40
    Fatal: none
@@ -302,7 +302,7 @@ Address: 3205 Archibald Way, Whistler V8E 0B8
    Bedrooms: 6
    Bathrooms: 8 total (7 full / 1 half)
    Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3141069-3205-archibald-way-whistler-v8e-0b8.109180105
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 6367
    Photos: 40
    Fatal: none
@@ -359,7 +359,7 @@ Address: 2901 1408 Robson Street, Vancouver V6G 1B9
    Bedrooms: 4
    Bathrooms: 4 total (3 full / 1 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 2769
    Photos: 41
    Fatal: none
@@ -378,7 +378,7 @@ Address: 5871 Sunshine Coast Highway, Sechelt V0N 3A0
    Bedrooms: 5
    Bathrooms: 8 total (6 full / 2 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 7176
    Photos: 35
    Fatal: none
@@ -397,7 +397,7 @@ Address: 19 180 Sheerwater Court, Kelowna V1V 2X1
    Bedrooms: 4
    Bathrooms: 7 total (5 full / 2 half)
    Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://maxhasman.ca/
+   Virtual tour: [none detected]
    Living area: 11663
    Photos: 38
    Fatal: none

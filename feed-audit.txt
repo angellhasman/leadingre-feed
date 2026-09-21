@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-21 07:36:41 UTC
+Generated: 2026-09-21 17:53:51 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -21,8 +21,8 @@ Address:  , West Vancouver
    Price: 58800000
    Status: Active
    Type: Residential / Single Family Residence
-   Listing agent: Angell Hasman
-   Agent assignment: office/reciprocity brokerage disclosure
+   Listing agent: Malcolm Hasman
+   Agent assignment: listing_overrides.json agent override
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 5
    Bathrooms: 7 total (5 full / 2 half)
@@ -43,8 +43,8 @@ Address:  , West Vancouver V7V 1E4
    Price: 39980000
    Status: Active
    Type: Residential / Single Family Residence
-   Listing agent: Angell Hasman
-   Agent assignment: office/reciprocity brokerage disclosure
+   Listing agent: Malcolm Hasman
+   Agent assignment: listing_overrides.json agent override
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 4
    Bathrooms: 6 total (5 full / 1 half)
@@ -64,8 +64,8 @@ Address:  , White Rock V4B 2B3
    Price: 32500000
    Status: Active
    Type: Residential / Single Family Residence
-   Listing agent: Angell Hasman
-   Agent assignment: office/reciprocity brokerage disclosure
+   Listing agent: Malcolm Hasman
+   Agent assignment: listing_overrides.json agent override
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 6
    Bathrooms: 8 total (6 full / 2 half)
@@ -85,8 +85,8 @@ Address: 961 King Georges Way, West Vancouver V7S 1S6
    Price: 29800000
    Status: Active
    Type: Residential / Single Family Residence
-   Listing agent: Angell Hasman
-   Agent assignment: office/reciprocity brokerage disclosure
+   Listing agent: Malcolm Hasman
+   Agent assignment: listing_overrides.json agent override
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 7
    Bathrooms: 9 total (8 full / 1 half)
@@ -372,8 +372,8 @@ Address: 5871 Sunshine Coast Highway, Sechelt V0N 3A0
    Price: 6880000
    Status: Active
    Type: Residential / Single Family Residence
-   Listing agent: Angell Hasman
-   Agent assignment: office/reciprocity brokerage disclosure
+   Listing agent: Malcolm Hasman
+   Agent assignment: listing_overrides.json agent override
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
    Bedrooms: 5
    Bathrooms: 8 total (6 full / 2 half)

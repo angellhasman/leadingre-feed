@@ -24,7 +24,7 @@
       <MemberLastName>Hasman</MemberLastName>
       <MemberFirstName>Angell</MemberFirstName>
       <MemberStatus>Active</MemberStatus>
-      <MemberMobilePhone />
+      <MemberMobilePhone>604-921-1188</MemberMobilePhone>
       <MemberOfficePhone>604-921-1188</MemberOfficePhone>
       <MemberEmail>info@angellhasman.ca</MemberEmail>
     </Member>
@@ -43,7 +43,7 @@
   <Properties>
     <Property>
       <ListingKey>MRP-107402265</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3041987</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -71,7 +71,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-107402276</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3147443</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -99,7 +99,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-107401309</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3061998</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -127,7 +127,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-107402198</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3058864</ListingId>
       <PropertyType>Residential</PropertyType>
@@ -547,7 +547,7 @@
     </Property>
     <Property>
       <ListingKey>MRP-107408263</ListingKey>
-      <ListAgentKey>ANGELL-HASMAN-LISTINGS</ListAgentKey>
+      <ListAgentKey>MALCOLM-HASMAN</ListAgentKey>
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3084509</ListingId>
       <PropertyType>Residential</PropertyType>

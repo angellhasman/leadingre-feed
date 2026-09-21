@@ -2,23 +2,27 @@
   "R3041987": {
     "BathroomsFull": 5,
     "BathroomsHalf": 2,
-    "VirtualTourURL": "https://www.youtube.com/watch?v=Id3Bo1rs0lo"
+    "VirtualTourURL": "https://www.youtube.com/watch?v=Id3Bo1rs0lo",
+    "ListingAgent": "Malcolm Hasman"
   },
   "R3147443": {
     "BathroomsFull": 5,
     "BathroomsHalf": 1,
-    "VirtualTourURL": "https://www.youtube.com/watch?v=34NpHb4rpxo"
+    "VirtualTourURL": "https://www.youtube.com/watch?v=34NpHb4rpxo",
+    "ListingAgent": "Malcolm Hasman"
   },
   "R3061998": {
     "PostalCode": "V4B 2B3",
     "BathroomsFull": 6,
     "BathroomsHalf": 2,
-    "VirtualTourURL": "https://www.youtube.com/watch?v=ZZb3_a5tIbo"
+    "VirtualTourURL": "https://www.youtube.com/watch?v=ZZb3_a5tIbo",
+    "ListingAgent": "Malcolm Hasman"
   },
   "R3058864": {
     "BathroomsFull": 8,
     "BathroomsHalf": 1,
-    "VirtualTourURL": "https://www.youtube.com/watch?v=ihP1C2ejxVs"
+    "VirtualTourURL": "https://www.youtube.com/watch?v=ihP1C2ejxVs",
+    "ListingAgent": "Malcolm Hasman"
   },
   "R3136700": {
     "BathroomsFull": 5,
@@ -48,7 +52,8 @@
     "City": "Sechelt",
     "BathroomsFull": 6,
     "BathroomsHalf": 2,
-    "VirtualTourURL": "https://www.youtube.com/watch?v=G0PLo0NoYAE"
+    "VirtualTourURL": "https://www.youtube.com/watch?v=G0PLo0NoYAE",
+    "ListingAgent": "Malcolm Hasman"
   },
   "10389176": {
     "BathroomsFull": 5,

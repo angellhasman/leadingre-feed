@@ -90,7 +90,7 @@ ANGELL_MEMBER = {
     "MemberLastName": "Hasman",
     "MemberFirstName": "Angell",
     "MemberStatus": "Active",
-    "MemberMobilePhone": "",
+    "MemberMobilePhone": "604-921-1188",
     "MemberOfficePhone": "604-921-1188",
     "MemberEmail": "info@angellhasman.ca",
 }
@@ -1300,10 +1300,33 @@ def parse_listing(url: str, overrides: dict) -> tuple[dict, list[str], list[str]
         except (TypeError, ValueError):
             pass
 
-    selected_member, agent_reason, agent_warning = choose_listing_member(
-        record.get("City", ""),
-        brokerage_disclosure,
-    )
+    # Optional agent override for listings where the MyRealPage reciprocity
+    # disclosure identifies only the brokerage rather than the actual primary
+    # MLS listing agent. Keep this separate from XML fields so it is used only
+    # for Member/ListAgentKey assignment.
+    agent_override = ""
+    for key in [mls, listing_key, internal_id]:
+        if key and isinstance(overrides.get(key), dict):
+            candidate = clean_text(overrides[key].get("ListingAgent", ""))
+            if candidate:
+                agent_override = candidate
+                break
+
+    agent_override_l = agent_override.lower()
+    if agent_override_l in {"malcolm", "malcolm hasman", "malcolm-hasman"}:
+        selected_member = MALCOLM_MEMBER
+        agent_reason = "listing_overrides.json agent override"
+        agent_warning = ""
+    elif agent_override_l in {"angell", "angell hasman", "angell-hasman-listings"}:
+        selected_member = ANGELL_MEMBER
+        agent_reason = "listing_overrides.json agent override"
+        agent_warning = ""
+    else:
+        selected_member, agent_reason, agent_warning = choose_listing_member(
+            record.get("City", ""),
+            brokerage_disclosure,
+        )
+
     record["ListAgentKey"] = selected_member["MemberKey"]
 
     # Internal audit-only fields. They are not written to the XML.

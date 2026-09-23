@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-22 07:35:25 UTC
+Generated: 2026-09-23 01:08:52 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -16,8 +16,8 @@ INDEX PAGES READ
 
 1. R3041987
    ListingKey: MRP-107402265
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3041987-address-on-request-west-vancouver.107402265
-Address:  , West Vancouver
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3041987-3330-radcliffe-avenue-west-vancouver.107402265
+Address: 3330 Radcliffe Avenue, West Vancouver
    Price: 58800000
    Status: Active
    Type: Residential / Single Family Residence
@@ -32,8 +32,6 @@ Address:  , West Vancouver
    Photos: 33
    Fatal: none
    Warnings:
-     - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
-     - street address not fully available
      - postal code unavailable
 
 2. R3147443
@@ -59,8 +57,8 @@ Address:  , West Vancouver V7V 1E4
 
 3. R3061998
    ListingKey: MRP-107401309
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3061998-address-on-request-white-rock-v4b-2b3.107401309
-Address:  , White Rock V4B 2B3
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3061998-14971-prospect-avenue-white-rock-v4b-2b3.107401309
+Address: 14971 Prospect Avenue, White Rock V4B 2B3
    Price: 32500000
    Status: Active
    Type: Residential / Single Family Residence
@@ -75,8 +73,6 @@ Address:  , White Rock V4B 2B3
    Photos: 33
    Fatal: none
    Warnings:
-     - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
-     - street address not fully available
 
 4. R3058864
    ListingKey: MRP-107402198

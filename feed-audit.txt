@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-23 01:08:52 UTC
+Generated: 2026-09-23 07:35:54 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -16,8 +16,8 @@ INDEX PAGES READ
 
 1. R3041987
    ListingKey: MRP-107402265
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3041987-3330-radcliffe-avenue-west-vancouver.107402265
-Address: 3330 Radcliffe Avenue, West Vancouver
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3041987-3330-radcliffe-avenue-west-vancouver-v7v-1g6.107402265
+Address: 3330 Radcliffe Avenue, West Vancouver V7V 1G6
    Price: 58800000
    Status: Active
    Type: Residential / Single Family Residence
@@ -32,7 +32,6 @@ Address: 3330 Radcliffe Avenue, West Vancouver
    Photos: 33
    Fatal: none
    Warnings:
-     - postal code unavailable
 
 2. R3147443
    ListingKey: MRP-107402276

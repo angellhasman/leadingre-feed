@@ -1,11 +1,11 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-09-23 07:35:54 UTC
+Generated: 2026-09-24 07:35:34 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
 Listings parsed: 20
 Total photo URLs: 729
-Virtual tours: 13
+Virtual tours: 12
 Feed updated: YES
 Fatal issues: 0
 
@@ -69,7 +69,7 @@ Address: 14971 Prospect Avenue, White Rock V4B 2B3
    Bathroom source: listing_overrides.json (MLS-verified fallback)
    Virtual tour: https://www.youtube.com/watch?v=ZZb3_a5tIbo
    Living area: 11811
-   Photos: 33
+   Photos: 32
    Fatal: none
    Warnings:
 
@@ -92,28 +92,7 @@ Address: 961 King Georges Way, West Vancouver V7S 1S6
    Fatal: none
    Warnings:
 
-5. R3136700
-   ListingKey: MRP-109085993
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3136700-address-on-request-west-vancouver-v7s-3k3.109085993
-Address:  , West Vancouver V7S 3K3
-   Price: 23750000
-   Status: Active
-   Type: Residential / Single Family Residence
-   Listing agent: Malcolm Hasman
-   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
-   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
-   Bedrooms: 5
-   Bathrooms: 8 total (5 full / 3 half)
-   Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://www.youtube.com/watch?v=9KRqCPvYj90
-   Living area: 9549
-   Photos: 40
-   Fatal: none
-   Warnings:
-     - address is hidden publicly; feed will suppress it, but LeadingRE recommends supplying the true address privately for geocoding
-     - street address not fully available
-
-6. R3126771
+5. R3126771
    ListingKey: MRP-108787675
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3126771-3824-sunridge-drive-whistler-v8e-0w1.108787675
 Address: 3824 Sunridge Drive, Whistler V8E 0W1
@@ -129,6 +108,25 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Virtual tour: https://www.youtube.com/watch?v=AnR31I9qGxs
    Living area: 7241
    Photos: 49
+   Fatal: none
+   Warnings:
+
+6. R3158469
+   ListingKey: MRP-109628086
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-3612-marine-drive-west-vancouver-v7v-1n4.109628086
+Address: 3612 Marine Drive, West Vancouver V7V 1N4
+   Price: 16800000
+   Status: Active
+   Type: Land / Land
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by Angell, Hasman & Associates (Malcolm Hasman) Realty Ltd.
+   Bedrooms: [blank]
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
+   Virtual tour: [none detected]
+   Living area: [blank]
+   Photos: 13
    Fatal: none
    Warnings:
 
@@ -151,26 +149,7 @@ Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
    Fatal: none
    Warnings:
 
-8. R3158469
-   ListingKey: MRP-109628086
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-3612-marine-drive-west-vancouver-v7v-1n4.109628086
-Address: 3612 Marine Drive, West Vancouver V7V 1N4
-   Price: 16800000
-   Status: Active
-   Type: Land / Land
-   Listing agent: Malcolm Hasman
-   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
-   Brokerage disclosure: Listed by Angell, Hasman & Associates (Malcolm Hasman) Realty Ltd.
-   Bedrooms: [blank]
-   Bathrooms: [unknown total] total ([blank] full / [blank] half)
-   Bathroom source: [not found]
-   Virtual tour: [none detected]
-   Living area: [blank]
-   Photos: 13
-   Fatal: none
-   Warnings:
-
-9. R3154478
+8. R3154478
    ListingKey: MRP-109620749
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154478-3820-sunridge-drive-whistler-v8e-0w1.109620749
 Address: 3820 Sunridge Drive, Whistler V8E 0W1
@@ -189,7 +168,7 @@ Address: 3820 Sunridge Drive, Whistler V8E 0W1
    Fatal: none
    Warnings:
 
-10. 10394077
+9. 10394077
    ListingKey: MRP-109805863
    URL: https://maxhasman.ca/leading-real-estate.html/listing.10394077-20-180-sheerwater-court-kelowna-v1v-2x1.109805863
 Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
@@ -208,7 +187,7 @@ Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
    Fatal: none
    Warnings:
 
-11. R3154347
+10. R3154347
    ListingKey: MRP-109519394
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154347-690-knockmaroon-road-west-vancouver-v7s-1r6.109519394
 Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
@@ -226,6 +205,26 @@ Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
    Photos: 40
    Fatal: none
    Warnings:
+
+11. R3143003
+   ListingKey: MRP-107408223
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3143003-3478-marine-drive-west-vancouver-v7v-1n2.107408223
+Address: 3478 Marine Drive, West Vancouver V7V 1N2
+   Price: 11800000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
+   Bedrooms: 4
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
+   Virtual tour: [none detected]
+   Living area: 3663
+   Photos: 41
+   Fatal: none
+   Warnings:
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 12. R3116508
    ListingKey: MRP-108596080

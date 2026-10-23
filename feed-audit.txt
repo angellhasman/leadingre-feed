@@ -1,15 +1,13 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-10-22 13:03:56 UTC
+Generated: 2026-10-23 12:42:55 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
-Listings discovered: 19
-Listings parsed: 19
-Total photo URLs: 699
-Virtual tours: 12
-Feed updated: YES
-Fatal issues: 0
-
-NOTE: The current selected-listing count is 19 rather than 20. This is not automatically fatal as long as the page intentionally contains that number.
+Listings discovered: 20
+Listings parsed: 20
+Total photo URLs: 737
+Virtual tours: 11
+Feed updated: NO
+Fatal issues: 1
 
 INDEX PAGES READ
 - INDEX PAGE: https://maxhasman.ca/leading-real-estate.html
@@ -75,26 +73,7 @@ Address: 14971 Prospect Avenue, White Rock V4B 2B3
    Fatal: none
    Warnings:
 
-4. R3058864
-   ListingKey: MRP-107402198
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3058864-961-king-georges-way-west-vancouver-v7s-1s6.107402198
-Address: 961 King Georges Way, West Vancouver V7S 1S6
-   Price: 29800000
-   Status: Active
-   Type: Residential / Single Family Residence
-   Listing agent: Malcolm Hasman
-   Agent assignment: listing_overrides.json agent override
-   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES LTD
-   Bedrooms: 7
-   Bathrooms: 9 total (8 full / 1 half)
-   Bathroom source: listing_overrides.json (MLS-verified fallback)
-   Virtual tour: https://www.youtube.com/watch?v=ihP1C2ejxVs
-   Living area: 11279
-   Photos: 31
-   Fatal: none
-   Warnings:
-
-5. R3126771
+4. R3126771
    ListingKey: MRP-108787675
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3126771-3824-sunridge-drive-whistler-v8e-0w1.108787675
 Address: 3824 Sunridge Drive, Whistler V8E 0W1
@@ -113,7 +92,7 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Fatal: none
    Warnings:
 
-6. R3158469
+5. R3158469
    ListingKey: MRP-109628086
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-3612-marine-drive-west-vancouver-v7v-1n4.109628086
 Address: 3612 Marine Drive, West Vancouver V7V 1N4
@@ -132,7 +111,7 @@ Address: 3612 Marine Drive, West Vancouver V7V 1N4
    Fatal: none
    Warnings:
 
-7. R3158164
+6. R3158164
    ListingKey: MRP-109623812
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158164-ph2-1568-alberni-street-vancouver-v6g-2z6.109623812
 Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
@@ -151,7 +130,7 @@ Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
    Fatal: none
    Warnings:
 
-8. R3154478
+7. R3154478
    ListingKey: MRP-109620749
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154478-3820-sunridge-drive-whistler-v8e-0w1.109620749
 Address: 3820 Sunridge Drive, Whistler V8E 0W1
@@ -169,6 +148,28 @@ Address: 3820 Sunridge Drive, Whistler V8E 0W1
    Photos: 36
    Fatal: none
    Warnings:
+
+8. R3166058
+   ListingKey: MRP-109882459
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3166058-658-200-street-langley-v2z-1v9.109882459
+Address: 658 200 Street, Langley V2Z 1V9
+   Price: 13750000
+   Status: Active
+   Type: Residential / 
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
+   Bedrooms: 3
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
+   Virtual tour: [none detected]
+   Living area: 4936
+   Photos: 33
+   Fatal: public-address listing is missing a usable street address
+   Warnings:
+     - street address not fully available
+     - PropertySubType could not be confidently mapped
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 9. 10394077
    ListingKey: MRP-109805863
@@ -377,5 +378,24 @@ Address: 19 180 Sheerwater Court, Kelowna V1V 2X1
    Virtual tour: [none detected]
    Living area: 11663
    Photos: 38
+   Fatal: none
+   Warnings:
+
+20. R3177085
+   ListingKey: MRP-110132392
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3177085-3106-o-hara-lane-surrey-v4a-3e7.110132392
+Address: 3106 O Hara Lane, Surrey V4A 3E7
+   Price: 6750000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
+   Bedrooms: 2
+   Bathrooms: 4 total (3 full / 1 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3177085-3106-o-hara-lane-surrey-v4a-3e7.110132392
+   Virtual tour: [none detected]
+   Living area: 2474
+   Photos: 36
    Fatal: none
    Warnings:

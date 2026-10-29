@@ -1,13 +1,13 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-10-28 14:11:08 UTC
+Generated: 2026-10-29 14:31:08 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
 Listings parsed: 20
 Total photo URLs: 737
 Virtual tours: 11
-Feed updated: NO
-Fatal issues: 1
+Feed updated: YES
+Fatal issues: 0
 
 INDEX PAGES READ
 - INDEX PAGE: https://maxhasman.ca/leading-real-estate.html
@@ -152,7 +152,7 @@ Address: 3820 Sunridge Drive, Whistler V8E 0W1
 8. R3166058
    ListingKey: MRP-109882459
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3166058-658-200-street-langley-v2z-1v9.109882459
-Address: 658 200 Street, Langley V2Z 1V9
+Address: 658 658 200 Street, Langley V2Z 1V9
    Price: 13750000
    Status: Active
    Type: Residential / 
@@ -160,16 +160,14 @@ Address: 658 200 Street, Langley V2Z 1V9
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 3
-   Bathrooms: [unknown total] total ([blank] full / [blank] half)
-   Bathroom source: [not found]
+   Bathrooms: 12 total (5 full / 7 half)
+   Bathroom source: listing_overrides.json (MLS-verified fallback)
    Virtual tour: [none detected]
    Living area: 4936
    Photos: 33
-   Fatal: public-address listing is missing a usable street address
+   Fatal: none
    Warnings:
-     - street address not fully available
      - PropertySubType could not be confidently mapped
-     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 9. 10394077
    ListingKey: MRP-109805863

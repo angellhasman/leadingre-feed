@@ -70,5 +70,13 @@
   },
   "R3136223": {
     "VirtualTourURL": "https://www.youtube.com/watch?v=JwfOcdWEyyw"
+  },
+  "R3166058": {
+    "StreetNumber": "658",
+    "StreetName": "200",
+    "StreetSuffix": "Street",
+    "PropertySubType": "Single Family Residence",
+    "BathroomsFull": 5,
+    "BathroomsHalf": 7
   }
 }

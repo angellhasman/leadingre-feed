@@ -243,11 +243,11 @@
       <ListOfficeKey>ANGELL-HASMAN-WV</ListOfficeKey>
       <ListingId>R3166058</ListingId>
       <PropertyType>Residential</PropertyType>
-      <PropertySubType />
+      <PropertySubType>Single Family Residence</PropertySubType>
       <StreetNumber>658</StreetNumber>
       <StreetName>200</StreetName>
       <StreetSuffix>Street</StreetSuffix>
-      <UnitNumber>658</UnitNumber>
+      <UnitNumber />
       <City>Langley</City>
       <StateOrProvince>BC</StateOrProvince>
       <PostalCode>V2Z 1V9</PostalCode>

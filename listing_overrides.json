@@ -76,6 +76,8 @@
     "StreetName": "200",
     "StreetSuffix": "Street",
     "BathroomsFull": 5,
-    "BathroomsHalf": 7
+    "BathroomsHalf": 7,
+    "UnitNumber": "",
+    "PropertySubType": "Single Family Residence"
   }
 }

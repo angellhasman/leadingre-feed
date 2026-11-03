@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: leadingre-feed-update
+  cancel-in-progress: false
+
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -36,4 +40,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add leadingre.xml feed-audit.txt
           git commit -m "Refresh LeadingRE feed" || exit 0
-          git push
+
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; retrying shortly..."
+            sleep 10
+          done
+
+          echo "Unable to push refreshed feed after 3 attempts."
+          exit 1

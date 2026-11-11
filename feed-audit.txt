@@ -1,10 +1,10 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-11-10 15:41:03 UTC
+Generated: 2026-11-11 15:28:08 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
 Listings parsed: 20
-Total photo URLs: 735
+Total photo URLs: 742
 Virtual tours: 10
 Feed updated: YES
 Fatal issues: 0
@@ -93,7 +93,27 @@ Address: 2696 Bellevue Avenue, West Vancouver V7V 1E4
    Warnings:
      - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
-5. R3126771
+5. R3181934
+   ListingKey: MRP-110270458
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3181934-1038-eyremount-drive-v7s-2b3.110270458
+Address: 1038 Eyremount Drive, West Vancouver V7S 2B3
+   Price: 17980000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Listing agent: Malcolm Hasman
+   Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
+   Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
+   Bedrooms: 5
+   Bathrooms: [unknown total] total ([blank] full / [blank] half)
+   Bathroom source: [not found]
+   Virtual tour: [none detected]
+   Living area: 11682
+   Photos: 47
+   Fatal: none
+   Warnings:
+     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
+
+6. R3126771
    ListingKey: MRP-108787675
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3126771-3824-sunridge-drive-whistler-v8e-0w1.108787675
 Address: 3824 Sunridge Drive, Whistler V8E 0W1
@@ -112,7 +132,7 @@ Address: 3824 Sunridge Drive, Whistler V8E 0W1
    Fatal: none
    Warnings:
 
-6. R3158164
+7. R3158164
    ListingKey: MRP-109623812
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158164-ph2-1568-alberni-street-vancouver-v6g-2z6.109623812
 Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
@@ -131,7 +151,7 @@ Address: ph2 1568 Alberni Street, Vancouver V6G 2Z6
    Fatal: none
    Warnings:
 
-7. R3158469
+8. R3158469
    ListingKey: MRP-109628086
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3158469-3612-marine-drive-west-vancouver-v7v-1n4.109628086
 Address: 3612 Marine Drive, West Vancouver V7V 1N4
@@ -150,7 +170,7 @@ Address: 3612 Marine Drive, West Vancouver V7V 1N4
    Fatal: none
    Warnings:
 
-8. R3154478
+9. R3154478
    ListingKey: MRP-109620749
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154478-3820-sunridge-drive-whistler-v8e-0w1.109620749
 Address: 3820 Sunridge Drive, Whistler V8E 0W1
@@ -169,7 +189,7 @@ Address: 3820 Sunridge Drive, Whistler V8E 0W1
    Fatal: none
    Warnings:
 
-9. R3166058
+10. R3166058
    ListingKey: MRP-109882459
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3166058-658-200-street-langley-v2z-1v9.109882459
 Address: 658 200 Street, Langley V2Z 1V9
@@ -188,7 +208,7 @@ Address: 658 200 Street, Langley V2Z 1V9
    Fatal: none
    Warnings:
 
-10. 10394077
+11. 10394077
    ListingKey: MRP-109805863
    URL: https://maxhasman.ca/leading-real-estate.html/listing.10394077-20-180-sheerwater-court-kelowna-v1v-2x1.109805863
 Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
@@ -207,7 +227,7 @@ Address: 20 180 Sheerwater Court, Kelowna V1V 2X1
    Fatal: none
    Warnings:
 
-11. R3154347
+12. R3154347
    ListingKey: MRP-109519394
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3154347-690-knockmaroon-road-west-vancouver-v7s-1r6.109519394
 Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
@@ -222,25 +242,6 @@ Address: 690 Knockmaroon Road, West Vancouver V7S 1R6
    Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3154347-690-knockmaroon-road-west-vancouver-v7s-1r6.109519394
    Virtual tour: https://www.youtube.com/watch?v=yaPOtT8ry1o
    Living area: 10343
-   Photos: 40
-   Fatal: none
-   Warnings:
-
-12. R3116508
-   ListingKey: MRP-108596080
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3116508-3803-sunridge-place-whistler-v0n-1b3.108596080
-Address: 3803 Sunridge Place, Whistler V0N 1B3
-   Price: 11200000
-   Status: Active
-   Type: Residential / Single Family Residence
-   Listing agent: Angell Hasman
-   Agent assignment: office/reciprocity brokerage disclosure
-   Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
-   Bedrooms: 6
-   Bathrooms: 10 total (8 full / 2 half)
-   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3116508-3803-sunridge-place-whistler-v0n-1b3.108596080
-   Virtual tour: [none detected]
-   Living area: 7442
    Photos: 40
    Fatal: none
    Warnings:
@@ -264,7 +265,26 @@ Address: 450 Macbeth Crescent, West Vancouver V7T 1V7
    Fatal: none
    Warnings:
 
-14. R3136223
+14. R3116508
+   ListingKey: MRP-108596080
+   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3116508-3803-sunridge-place-whistler-v0n-1b3.108596080
+Address: 3803 Sunridge Place, Whistler V0N 1B3
+   Price: 11200000
+   Status: Active
+   Type: Residential / Single Family Residence
+   Listing agent: Angell Hasman
+   Agent assignment: office/reciprocity brokerage disclosure
+   Brokerage disclosure: Listed by Angell Hasman & Associates Realty Ltd.
+   Bedrooms: 6
+   Bathrooms: 10 total (8 full / 2 half)
+   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3116508-3803-sunridge-place-whistler-v0n-1b3.108596080
+   Virtual tour: [none detected]
+   Living area: 7442
+   Photos: 40
+   Fatal: none
+   Warnings:
+
+15. R3136223
    ListingKey: MRP-109061930
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3136223-6693-tapley-place-whistler-v6e-0c5.109061930
 Address: 6693 Tapley Place, Whistler V6E 0C5
@@ -283,7 +303,7 @@ Address: 6693 Tapley Place, Whistler V6E 0C5
    Fatal: none
    Warnings:
 
-15. R3141069
+16. R3141069
    ListingKey: MRP-109180105
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3141069-3205-archibald-way-whistler-v8e-0b8.109180105
 Address: 3205 Archibald Way, Whistler V8E 0B8
@@ -302,7 +322,7 @@ Address: 3205 Archibald Way, Whistler V8E 0B8
    Fatal: none
    Warnings:
 
-16. R3084509
+17. R3084509
    ListingKey: MRP-107408263
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3084509-5871-sunshine-coast-highway-sechelt-v0n-3a0.107408263
 Address: 5871 Sunshine Coast Highway, Sechelt V0N 3A0
@@ -321,7 +341,7 @@ Address: 5871 Sunshine Coast Highway, Sechelt V0N 3A0
    Fatal: none
    Warnings:
 
-17. 10389176
+18. 10389176
    ListingKey: MRP-109806075
    URL: https://maxhasman.ca/leading-real-estate.html/listing.10389176-19-180-sheerwater-court-kelowna-v1v-2x1.109806075
 Address: 19 180 Sheerwater Court, Kelowna V1V 2X1
@@ -340,7 +360,7 @@ Address: 19 180 Sheerwater Court, Kelowna V1V 2X1
    Fatal: none
    Warnings:
 
-18. R3177085
+19. R3177085
    ListingKey: MRP-110132392
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3177085-3106-o-hara-lane-surrey-v4a-3e7.110132392
 Address: 3106 O Hara Lane, Surrey V4A 3E7
@@ -359,7 +379,7 @@ Address: 3106 O Hara Lane, Surrey V4A 3E7
    Fatal: none
    Warnings:
 
-19. R3127148
+20. R3127148
    ListingKey: MRP-108837206
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3127148-9304-steller-s-way-whistler-v8e-1m1.108837206
 Address: 9304 Steller S Way, Whistler V8E 1M1
@@ -374,25 +394,6 @@ Address: 9304 Steller S Way, Whistler V8E 1M1
    Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3127148-9304-steller-s-way-whistler-v8e-1m1.108837206
    Virtual tour: [none detected]
    Living area: 4932
-   Photos: 40
-   Fatal: none
-   Warnings:
-
-20. R3157466
-   ListingKey: MRP-109594668
-   URL: https://maxhasman.ca/leading-real-estate.html/listing.r3157466-3902-1568-alberni-street-vancouver-v6g-0e3.109594668
-Address: 3902 1568 Alberni Street, Vancouver V6G 0E3
-   Price: 9278000
-   Status: Active
-   Type: Residential / Condominium
-   Listing agent: Angell Hasman
-   Agent assignment: office/reciprocity brokerage disclosure
-   Brokerage disclosure: Listed by Angell, Hasman & Associates Realty Ltd.
-   Bedrooms: 3
-   Bathrooms: 4 total (4 full / 0 half)
-   Bathroom source: https://maxhasman.ca/leading-real-estate.html/listing.r3157466-3902-1568-alberni-street-vancouver-v6g-0e3.109594668
-   Virtual tour: [none detected]
-   Living area: 3008
    Photos: 40
    Fatal: none
    Warnings:

@@ -51,10 +51,13 @@ jobs:
           git commit -m "Refresh LeadingRE feed" || exit 0
 
           for attempt in 1 2 3; do
-            if git push; then
+            # Rebase onto any repository changes made while this job was running
+            # (for example, a manual override or workflow maintenance commit).
+            if git pull --rebase origin main && git push; then
               exit 0
             fi
-            echo "Push attempt $attempt failed; retrying shortly..."
+            git rebase --abort 2>/dev/null || true
+            echo "Publish attempt $attempt failed; retrying shortly..."
             sleep 10
           done
 

@@ -79,5 +79,13 @@
     "BathroomsHalf": 7,
     "UnitNumber": "",
     "PropertySubType": "Single Family Residence"
+  },
+  "R3182364": {
+    "BathroomsFull": 5,
+    "BathroomsHalf": 1
+  },
+  "R3181934": {
+    "BathroomsFull": 7,
+    "BathroomsHalf": 2
   }
 }

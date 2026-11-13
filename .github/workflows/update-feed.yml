@@ -3,9 +3,18 @@ name: Update LeadingRE XML Feed
 on:
   workflow_dispatch:
   schedule:
-    # 12:30 AM Vancouver time is normally 2:30 AM Central,
-    # inside LeadingRE's recommended overnight delivery window.
-    - cron: "30 0 * * *"
+    # GitHub scheduled jobs can be delayed under load. Run several times
+    # through the Vancouver evening so at least one fresh snapshot is
+    # normally published before LeadingRE's overnight processing window.
+    - cron: "17 16 * * *"
+      timezone: "America/Vancouver"
+    - cron: "17 18 * * *"
+      timezone: "America/Vancouver"
+    - cron: "17 20 * * *"
+      timezone: "America/Vancouver"
+    - cron: "17 22 * * *"
+      timezone: "America/Vancouver"
+    - cron: "17 0 * * *"
       timezone: "America/Vancouver"
 
 permissions:

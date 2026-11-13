@@ -144,8 +144,8 @@
       <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3182364-2696-bellevue-avenue-west-vancouver-v7v-1e4.110270459</ListingURL>
       <PublicRemarks>This brilliantly designed modern masterpiece by Vancouver's most renowned Hlynsky Architects and built by Bradner Homes with full landscape design by Paul Sangha, is situated on a prized south-facing waterfront property providing breathtaking ocean views from Stanley Park to Vancouver Island. This 5 bedroom, 6 bathroom residence offers approx. 6,800 SQ FT of living on 3 spacious levels and provides an indoor-outdoor lifestyle like no other incorporating every modern amenity one could dream of with comfort, elegance and absolute sophistication. Additional amenities include a resort-style swimming pool with infinity jacuzzi, a privately situated outdoor lounge with built in BBQ, temperature controlled wine storage, in-home fitness studio, separate house-keeper suite, and a three car garage.</PublicRemarks>
       <BedroomsTotal>5</BedroomsTotal>
-      <BathroomsFull />
-      <BathroomsHalf />
+      <BathroomsFull>5</BathroomsFull>
+      <BathroomsHalf>1</BathroomsHalf>
       <StandardStatus>Active</StandardStatus>
       <LivingArea>7067</LivingArea>
       <LivingAreaUnits>Square Feet</LivingAreaUnits>
@@ -172,8 +172,8 @@
       <ListingURL>https://maxhasman.ca/leading-real-estate.html/listing.r3181934-1038-eyremount-drive-v7s-2b3.110270458</ListingURL>
       <PublicRemarks>This magnificent luxury residence is situated on a prized .72 acre gated, estate property in the prestigious British Properties boasting unobstructed views of the city skyline, Stanley Park &amp; ocean. The architectural elegance with its bold modern exterior creates an impressive presence with almost 10,000 SF of indoor-outdoor living. Exquisite design, master craftsmanship &amp; beautiful finishes together with an impeccable choice of quality materials create an international masterpiece while embracing the security &amp; convenience of today’s most up-to-date technology. Luxury features include a resort-style infinity pool and jacuzzi, exercise room with sauna, elevator to all three levels, security and smart home automation, air conditioning, heated driveway and a garage parking for 5 vehicles.</PublicRemarks>
       <BedroomsTotal>5</BedroomsTotal>
-      <BathroomsFull />
-      <BathroomsHalf />
+      <BathroomsFull>7</BathroomsFull>
+      <BathroomsHalf>2</BathroomsHalf>
       <StandardStatus>Active</StandardStatus>
       <LivingArea>11682</LivingArea>
       <LivingAreaUnits>Square Feet</LivingAreaUnits>

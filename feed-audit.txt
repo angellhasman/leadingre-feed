@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-11-13 15:31:52 UTC
+Generated: 2026-11-14 03:14:13 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -84,14 +84,13 @@ Address: 2696 Bellevue Avenue, West Vancouver V7V 1E4
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 5
-   Bathrooms: [unknown total] total ([blank] full / [blank] half)
-   Bathroom source: [not found]
+   Bathrooms: 6 total (5 full / 1 half)
+   Bathroom source: listing_overrides.json (MLS-verified fallback)
    Virtual tour: [none detected]
    Living area: 7067
    Photos: 40
    Fatal: none
    Warnings:
-     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 5. R3181934
    ListingKey: MRP-110270458
@@ -104,14 +103,13 @@ Address: 1038 Eyremount Drive, West Vancouver V7S 2B3
    Agent assignment: brokerage disclosure contains "(Malcolm Hasman)"
    Brokerage disclosure: Listed by ANGELL HASMAN & ASSOCIATES (MALCOLM HASMAN) REALTY LTD.
    Bedrooms: 5
-   Bathrooms: [unknown total] total ([blank] full / [blank] half)
-   Bathroom source: [not found]
+   Bathrooms: 9 total (7 full / 2 half)
+   Bathroom source: listing_overrides.json (MLS-verified fallback)
    Virtual tour: [none detected]
    Living area: 11682
    Photos: 47
    Fatal: none
    Warnings:
-     - full/half bathroom split not found on MyRealPage; both fields remain blank rather than guessing
 
 6. R3126771
    ListingKey: MRP-108787675

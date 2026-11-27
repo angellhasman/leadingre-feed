@@ -1,5 +1,5 @@
 ANGELL HASMAN -> LEADINGRE FEED AUDIT
-Generated: 2026-11-26 17:43:22 UTC
+Generated: 2026-11-27 05:02:12 UTC
 
 Listing-set URL: https://maxhasman.ca/leading-real-estate.html
 Listings discovered: 20
@@ -362,7 +362,7 @@ Address: 9304 Steller S Way, Whistler V8E 1M1
    ListingKey: MRP-109410668
    URL: https://maxhasman.ca/leading-real-estate.html/listing.r3150369-38574-high-creek-drive-squamish-v8b-0t6.109410668
 Address: 38574 High Creek Drive, Squamish V8B 0T6
-   Price: 5548000
+   Price: 5295000
    Status: Active
    Type: Residential / Single Family Residence
    Listing agent: Angell Hasman
